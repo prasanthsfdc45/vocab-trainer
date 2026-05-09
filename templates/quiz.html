@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Vocabulary Quiz</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+<body>
+    <div class="top-nav">
+
+        <a href="/" class="back-btn">
+            ← Back to Categories
+        </a>
+    
+    </div>
+
+    <div class="quiz-container">
+
+        <!-- LEFT SIDE -->
+        <div class="quiz-panel">
+
+            <div class="tag-badge">
+                {{ tag }}
+            </div>
+
+            <h1 class="sentence">
+                {{ sentence }}
+            </h1>
+
+            <form method="POST" action="/check">
+
+                <div class="options-container">
+
+                    {% for option in options %}
+
+                        <label class="option-card">
+
+                            <input
+                                type="radio"
+                                name="selected_answer"
+                                value="{{ option }}"
+                                required
+                            >
+
+                            <span>{{ option }}</span>
+
+                        </label>
+
+                    {% endfor %}
+
+                </div>
+
+                <input
+                    type="hidden"
+                    name="correct_answer"
+                    value="{{ question.word }}"
+                >
+
+                <input
+                    type="hidden"
+                    name="definition"
+                    value="{{ question.definition }}"
+                >
+
+                <input
+                    type="hidden"
+                    name="notes"
+                    value="{{ question.notes }}"
+                >
+
+                <input
+                    type="hidden"
+                    name="tag"
+                    value="{{ tag }}"
+                >
+
+                <button type="submit" class="submit-btn">
+                    Submit Answer
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+        <div class="feedback-panel">
+
+            <h2>Previous Result</h2>
+
+            {% if result %}
+
+                <div class="result-box">
+
+                    <h3>{{ result|safe }}</h3>
+
+                    <div class="info-block">
+                        <div class="label">Word</div>
+                        <div class="value">{{ previous_word }}</div>
+                    </div>
+
+                    <div class="info-block">
+                        <div class="label">Definition</div>
+                        <div class="value">{{ definition }}</div>
+                    </div>
+
+                    <div class="info-block">
+                        <div class="label">Usage Notes</div>
+                        <div class="value">{{ notes }}</div>
+                    </div>
+
+                </div>
+
+            {% else %}
+
+                <div class="empty-state">
+                    Submit an answer to see feedback and explanations.
+                </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

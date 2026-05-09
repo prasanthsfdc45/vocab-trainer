@@ -1,0 +1,50 @@
+
+<html>
+
+<head>
+    <title>Vocabulary Trainer</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="hero-section">
+
+            <h1>🧠 Cognitive Vocabulary Trainer</h1>
+
+            <p>
+                Train thinking, leadership, analysis,
+                communication and decision-making vocabulary.
+            </p>
+
+        </div>
+
+        <div class="category-grid">
+
+            {% for tag in tags %}
+
+                <a
+                    class="category-card"
+                    href="/quiz/{{ tag }}"
+                >
+                    <h2>{{ tag }}</h2>
+                    <p>
+                        Practice contextual vocabulary
+                    </p>
+                </a>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
