@@ -1,1209 +1,996 @@
 {
-  "exported_at": "2026-04-27T00:00:00Z",
-  "count": 97,
-  "words": [
-    {
-      "id": "aac31b8c-0423-4106-ae14-8197ce985640",
-      "word": "ascertain",
-      "definition": "find something out with certainty after investigation",
-      "example": "We need to ascertain the root cause before proposing a fix",
-      "synonyms": [
-        "determine",
-        "verify",
-        "establish"
-      ],
-      "part_of_speech": "verb",
-      "tags": [
-        "analysis",
-        "truth"
-      ],
-      "notes": "Use when confirming facts before action",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "905ffde4-78d6-42c1-86e5-fab7a7431008",
-      "word": "discern",
-      "definition": "identify subtle differences or patterns",
-      "example": "We must discern real issues from noise",
-      "synonyms": [
-        "perceive",
-        "detect",
-        "differentiate"
-      ],
-      "part_of_speech": "verb",
-      "tags": [
-        "analysis",
-        "insight"
-      ],
-      "notes": "Use for subtle insights",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "7fde955e-7c2f-4b78-a471-2e03c97169aa",
-      "word": "corroborate",
-      "definition": "support with evidence",
-      "example": "Data should corroborate this claim",
-      "synonyms": [
-        "confirm",
-        "validate",
-        "support"
-      ],
-      "part_of_speech": "verb",
-      "tags": [
-        "evidence"
-      ],
-      "notes": "Use to back claims",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "665ae79e-cdf1-4234-aa5f-3e127c04a379",
-      "word": "distill",
-      "definition": "extract the core idea",
-      "example": "Let me distill this to key insight",
-      "synonyms": [
-        "summarize",
-        "extract"
-      ],
-      "part_of_speech": "verb",
-      "tags": [
-        "thinking"
-      ],
-      "notes": "Use for essence",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "3c974d14-c18d-473d-b446-1941a2767cbd",
-      "word": "critique",
-      "definition": "evaluate deeply with judgment",
-      "example": "Let\u2019s critique this design",
-      "synonyms": [
-        "analyze",
-        "assess"
-      ],
-      "part_of_speech": "verb",
-      "tags": [
-        "evaluation"
-      ],
-      "notes": "Use for deep evaluation",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "8feb32c7-0a15-406a-aa9b-60970632ae3c",
-      "word": "scrutinize",
-      "definition": "inspect closely in detail",
-      "example": "We need to scrutinize logs",
-      "synonyms": [
-        "inspect",
-        "examine"
-      ],
-      "part_of_speech": "verb",
-      "tags": [
-        "evaluation"
-      ],
-      "notes": "Use for detailed checking",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "0110603a-fced-4d01-b4f6-11d1e20138df",
-      "word": "weigh",
-      "definition": "compare options before deciding",
-      "example": "We should weigh both options",
-      "synonyms": [
-        "compare",
-        "assess"
-      ],
-      "part_of_speech": "verb",
-      "tags": [
-        "decision"
-      ],
-      "notes": "Pre-decision comparison",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "04881684-3e37-437d-bb8b-92b2172cbeb5",
-      "word": "evaluate",
-      "definition": "judge overall value",
-      "example": "Let\u2019s evaluate performance",
-      "synonyms": [
-        "assess",
-        "review"
-      ],
-      "part_of_speech": "verb",
-      "tags": [
-        "decision"
-      ],
-      "notes": "Overall judgment",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "d0698b93-d071-4030-ae65-aee0f6c68419",
-      "word": "rationale",
-      "definition": "reasoning behind a decision",
-      "example": "Let me explain the rationale",
-      "synonyms": [
-        "logic",
-        "reasoning"
-      ],
-      "part_of_speech": "noun",
-      "tags": [
-        "decision"
-      ],
-      "notes": "Explain why",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "f1b82025-f113-4b02-ba7b-9c96f2557e50",
-      "word": "justify",
-      "definition": "prove correctness",
-      "example": "Can you justify this approach?",
-      "synonyms": [
-        "defend",
-        "validate"
-      ],
-      "part_of_speech": "verb",
-      "tags": [
-        "decision"
-      ],
-      "notes": "Used under challenge",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "caab990b-cd87-437c-9b52-4e5f7ec5ca07",
-      "word": "rationalize",
-      "definition": "justify weak reasoning",
-      "example": "We are rationalizing this decision",
-      "synonyms": [
-        "excuse"
-      ],
-      "part_of_speech": "verb",
-      "tags": [
-        "bias"
-      ],
-      "notes": "Negative tone",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "0d634e3f-a135-43bf-ab87-2c4ab406a7d5",
-      "word": "decide",
-      "definition": "use 'decide' effectively in professional context",
-      "example": "We should decide this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "858de318-cf81-4338-b39d-84fef62b0783",
-      "word": "articulate",
-      "definition": "use 'articulate' effectively in professional context",
-      "example": "We should articulate this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "7c19dd50-bfe0-4f20-be88-1939da1d8731",
-      "word": "clarify",
-      "definition": "use 'clarify' effectively in professional context",
-      "example": "We should clarify this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "6c106b25-3bc2-40c2-bc43-2aaaf5489726",
-      "word": "specify",
-      "definition": "use 'specify' effectively in professional context",
-      "example": "We should specify this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "f17d1c27-1972-4218-ada4-ee93b14072a0",
-      "word": "define",
-      "definition": "use 'define' effectively in professional context",
-      "example": "We should define this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "4b03113c-4470-4f69-b581-72ac27b894b3",
-      "word": "expound",
-      "definition": "use 'expound' effectively in professional context",
-      "example": "We should expound this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "8f930693-0394-4909-9dec-069a5825da3d",
-      "word": "contextualize",
-      "definition": "use 'contextualize' effectively in professional context",
-      "example": "We should contextualize this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "b9d04508-1b1a-4c85-89a1-22ee18682d45",
-      "word": "frame",
-      "definition": "use 'frame' effectively in professional context",
-      "example": "We should frame this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "eb6ade85-1d37-433d-8704-f47d5c6d3d35",
-      "word": "align",
-      "definition": "bring into agreement",
-      "example": "Let\u2019s align on goals",
-      "synonyms": [
-        "agree"
-      ],
-      "part_of_speech": "verb",
-      "tags": [
-        "collaboration"
-      ],
-      "notes": "Direction alignment",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "a118d22f-c807-4ab2-878d-8d86ee068c2e",
-      "word": "sync",
-      "definition": "coordinate execution",
-      "example": "Let\u2019s sync timelines",
-      "synonyms": [
-        "coordinate"
-      ],
-      "part_of_speech": "verb",
-      "tags": [
-        "execution"
-      ],
-      "notes": "Execution alignment",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "4eb3d7e4-b029-4457-9f75-cabc1a856fa5",
-      "word": "converge",
-      "definition": "use 'converge' effectively in professional context",
-      "example": "We should converge this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "99c43cd4-dde5-4484-8e24-cf05a1f2564f",
-      "word": "consensus",
-      "definition": "use 'consensus' effectively in professional context",
-      "example": "We should consensus this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "458c1646-6ef3-4ae7-b1b8-c3606cdfb843",
-      "word": "own",
-      "definition": "take responsibility",
-      "example": "I will own this",
-      "synonyms": [
-        "take charge"
-      ],
-      "part_of_speech": "verb",
-      "tags": [
-        "execution"
-      ],
-      "notes": "Accountability",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "b3b0a4e7-7c56-4c35-b4e1-819a6e716bc2",
-      "word": "drive",
-      "definition": "use 'drive' effectively in professional context",
-      "example": "We should drive this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "c9d678d1-c414-44b8-8fac-614a30908327",
-      "word": "deliver",
-      "definition": "use 'deliver' effectively in professional context",
-      "example": "We should deliver this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "0c979f7a-672c-4013-ac49-231d4b89bc4b",
-      "word": "address",
-      "definition": "use 'address' effectively in professional context",
-      "example": "We should address this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "03a9a3bb-31d8-46d4-81d5-5068faf33ac4",
-      "word": "mitigate",
-      "definition": "reduce impact",
-      "example": "Mitigate the risk first",
-      "synonyms": [
-        "reduce",
-        "limit"
-      ],
-      "part_of_speech": "verb",
-      "tags": [
-        "problem"
-      ],
-      "notes": "Temporary fix",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "aff2a95d-56f9-41ad-8845-d31d81d66ae6",
-      "word": "resolve",
-      "definition": "fix completely",
-      "example": "Resolve the issue fully",
-      "synonyms": [
-        "solve",
-        "fix"
-      ],
-      "part_of_speech": "verb",
-      "tags": [
-        "problem"
-      ],
-      "notes": "Permanent fix",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "5e3493a1-bb6c-4eaa-93df-edc8de0f309a",
-      "word": "escalate",
-      "definition": "use 'escalate' effectively in professional context",
-      "example": "We should escalate this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "1fefc61d-8b9d-48c2-9d15-4a25c0d5f6df",
-      "word": "hedge",
-      "definition": "use 'hedge' effectively in professional context",
-      "example": "We should hedge this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "e64a4fd2-0a7b-4e49-a3e2-1464e5f22281",
-      "word": "qualify",
-      "definition": "use 'qualify' effectively in professional context",
-      "example": "We should qualify this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "63524239-1288-4443-bec6-c07b450f2fa6",
-      "word": "calibrate",
-      "definition": "use 'calibrate' effectively in professional context",
-      "example": "We should calibrate this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "f2623ce2-e908-4779-958f-3e9ea3b7f875",
-      "word": "scope",
-      "definition": "use 'scope' effectively in professional context",
-      "example": "We should scope this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "43f6ae5d-1b9c-4b71-a9db-42e1ca74a469",
-      "word": "narrow",
-      "definition": "reduce options",
-      "example": "Let\u2019s narrow choices",
-      "synonyms": [
-        "reduce",
-        "focus"
-      ],
-      "part_of_speech": "verb",
-      "tags": [
-        "control"
-      ],
-      "notes": "Reduce scope",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "16e555f5-770a-4c9b-8c8b-467ac9a686b7",
-      "word": "streamline",
-      "definition": "use 'streamline' effectively in professional context",
-      "example": "We should streamline this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "e3ae5b77-c2c6-4ade-a5a3-cf60a768a66a",
-      "word": "finalize",
-      "definition": "complete and lock decision",
-      "example": "Let\u2019s finalize this",
-      "synonyms": [
-        "close"
-      ],
-      "part_of_speech": "verb",
-      "tags": [
-        "closure"
-      ],
-      "notes": "Decision closure",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "785998f3-531a-47ad-9f6a-28435db491b7",
-      "word": "confirm",
-      "definition": "use 'confirm' effectively in professional context",
-      "example": "We should confirm this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "60673d71-8f0b-42dc-838d-e18c19576187",
-      "word": "position",
-      "definition": "use 'position' effectively in professional context",
-      "example": "We should position this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "006a4534-ad52-4a56-a72e-b88d6d8321c1",
-      "word": "orient",
-      "definition": "use 'orient' effectively in professional context",
-      "example": "We should orient this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "00b792d5-dd40-4d7a-9708-87ea96f48f7f",
-      "word": "guide",
-      "definition": "use 'guide' effectively in professional context",
-      "example": "We should guide this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "60cb7fc3-7fb1-468f-9696-deee1e0178a5",
-      "word": "steer",
-      "definition": "use 'steer' effectively in professional context",
-      "example": "We should steer this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "c099ceb4-23fd-4c22-b68f-516932116c74",
-      "word": "infer",
-      "definition": "use 'infer' effectively in professional context",
-      "example": "We should infer this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "134ef433-d03e-488e-a11d-ed98d7be898c",
-      "word": "deduce",
-      "definition": "use 'deduce' effectively in professional context",
-      "example": "We should deduce this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "d0551ecc-7df8-4ab2-ad35-c81751f74d20",
-      "word": "substantiate",
-      "definition": "use 'substantiate' effectively in professional context",
-      "example": "We should substantiate this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "d6a17e12-a7a8-492f-abc2-c1e1cb089aff",
-      "word": "reinforce",
-      "definition": "use 'reinforce' effectively in professional context",
-      "example": "We should reinforce this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "bcc65b8a-ecc7-4efe-946a-c838b496bb46",
-      "word": "analyze",
-      "definition": "use 'analyze' effectively in professional context",
-      "example": "We should analyze this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "98e9f75c-7dfb-463d-b6c6-5c31df551323",
-      "word": "assess",
-      "definition": "use 'assess' effectively in professional context",
-      "example": "We should assess this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "53fca838-8417-4c7e-b888-3cef9c31b98d",
-      "word": "rank",
-      "definition": "use 'rank' effectively in professional context",
-      "example": "We should rank this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "bb85f3b0-a0cd-42f7-aaa5-d8c22df2c84b",
-      "word": "prioritize",
-      "definition": "use 'prioritize' effectively in professional context",
-      "example": "We should prioritize this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "e1a06a83-7ba9-4367-8555-dec2fad9263d",
-      "word": "sequence",
-      "definition": "use 'sequence' effectively in professional context",
-      "example": "We should sequence this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "438639c8-7cec-46e0-b1f7-7f837c836717",
-      "word": "execute",
-      "definition": "use 'execute' effectively in professional context",
-      "example": "We should execute this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "ab2775e8-3ea9-44d6-9aee-56688c0943d6",
-      "word": "track",
-      "definition": "use 'track' effectively in professional context",
-      "example": "We should track this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "cae4a424-bcec-42c0-a908-dfdee3ddf661",
-      "word": "identify",
-      "definition": "use 'identify' effectively in professional context",
-      "example": "We should identify this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "96063357-ead2-4042-8f53-f60867a8afa1",
-      "word": "diagnose",
-      "definition": "use 'diagnose' effectively in professional context",
-      "example": "We should diagnose this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "0fd351ce-a9c3-42f2-ac21-a9cb881e8723",
-      "word": "manage",
-      "definition": "use 'manage' effectively in professional context",
-      "example": "We should manage this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "dd761339-b8ba-448c-95be-9a89ac7c054d",
-      "word": "approximate",
-      "definition": "use 'approximate' effectively in professional context",
-      "example": "We should approximate this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "81788a30-f143-4ac6-b45c-1c6205861756",
-      "word": "estimate",
-      "definition": "use 'estimate' effectively in professional context",
-      "example": "We should estimate this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "c312ff91-1325-4c8b-b01f-a6e228cbb8b4",
-      "word": "anticipate",
-      "definition": "use 'anticipate' effectively in professional context",
-      "example": "We should anticipate this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "1dc53e2f-3b79-41bc-9d5b-519dc55897d9",
-      "word": "bound",
-      "definition": "use 'bound' effectively in professional context",
-      "example": "We should bound this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "3f8506bc-0e61-4137-8b6a-2530a5a160c0",
-      "word": "limit",
-      "definition": "use 'limit' effectively in professional context",
-      "example": "We should limit this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "b2ee5ca7-9187-48c2-bb60-a15b03569c3f",
-      "word": "simplify",
-      "definition": "use 'simplify' effectively in professional context",
-      "example": "We should simplify this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "1b232c45-5ab1-450b-8977-97b533ebdedc",
-      "word": "optimize",
-      "definition": "use 'optimize' effectively in professional context",
-      "example": "We should optimize this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "db9dd185-a7d5-4a29-885b-550934ab9066",
-      "word": "refine",
-      "definition": "use 'refine' effectively in professional context",
-      "example": "We should refine this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "561f3926-687e-420a-9e1d-13bd0fbae675",
-      "word": "acknowledge",
-      "definition": "use 'acknowledge' effectively in professional context",
-      "example": "We should acknowledge this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "ddae89cd-e991-4079-bb9f-7d16f9c856eb",
-      "word": "differ",
-      "definition": "use 'differ' effectively in professional context",
-      "example": "We should differ this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "44c85282-1e4d-411b-80aa-2cc571872d9e",
-      "word": "defer",
-      "definition": "use 'defer' effectively in professional context",
-      "example": "We should defer this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "af942d50-1e63-48cf-a1f4-62b06cf3426b",
-      "word": "trade-off",
-      "definition": "use 'trade-off' effectively in professional context",
-      "example": "We should trade-off this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "1ef99f30-c15c-474f-a363-bf4b170c0888",
-      "word": "constraint",
-      "definition": "use 'constraint' effectively in professional context",
-      "example": "We should constraint this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "6ee24a4e-14f8-4fc6-b7b5-a36d5d872081",
-      "word": "implication",
-      "definition": "use 'implication' effectively in professional context",
-      "example": "We should implication this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "8854d275-9ed6-420a-a1a7-bbba9890bfb3",
-      "word": "nuance",
-      "definition": "use 'nuance' effectively in professional context",
-      "example": "We should nuance this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "dec67926-0cfb-452c-a5bb-cb4843bf5be4",
-      "word": "abstract",
-      "definition": "use 'abstract' effectively in professional context",
-      "example": "We should abstract this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "8df146c4-10b1-4ac2-8267-8af404dcebb3",
-      "word": "generalize",
-      "definition": "use 'generalize' effectively in professional context",
-      "example": "We should generalize this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "5c576889-6721-4c1d-889e-64e62f27efa6",
-      "word": "structure",
-      "definition": "use 'structure' effectively in professional context",
-      "example": "We should structure this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "c55c99b0-7f26-4ccd-887d-52156a9f3a10",
-      "word": "organize",
-      "definition": "use 'organize' effectively in professional context",
-      "example": "We should organize this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "afbfcfa5-3b1d-422d-8996-27cd035f43be",
-      "word": "coordinate",
-      "definition": "use 'coordinate' effectively in professional context",
-      "example": "We should coordinate this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "3e8aefa6-0702-4716-b3e0-1d12004a3b65",
-      "word": "collaborate",
-      "definition": "use 'collaborate' effectively in professional context",
-      "example": "We should collaborate this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "c210860c-bb24-4219-955a-c759324ffbea",
-      "word": "influence",
-      "definition": "use 'influence' effectively in professional context",
-      "example": "We should influence this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "ae937d28-0a6e-47a6-a2c6-bd533fba20ed",
-      "word": "persuade",
-      "definition": "use 'persuade' effectively in professional context",
-      "example": "We should persuade this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "9c057cde-7a6c-40fc-801d-0912e20a4300",
-      "word": "advocate",
-      "definition": "use 'advocate' effectively in professional context",
-      "example": "We should advocate this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "06f3c269-6628-4f6d-8b5c-da1f19d96a9a",
-      "word": "validate",
-      "definition": "use 'validate' effectively in professional context",
-      "example": "We should validate this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "c5ab355d-90ac-44fd-83d8-e2f9447eb0aa",
-      "word": "verify",
-      "definition": "use 'verify' effectively in professional context",
-      "example": "We should verify this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "4854da44-37ca-4715-adb1-98a34d6b655a",
-      "word": "explain",
-      "definition": "use 'explain' effectively in professional context",
-      "example": "We should explain this as needed",
-      "synonyms": [],
-      "part_of_speech": "verb",
-      "tags": [
-        "general"
-      ],
-      "notes": "general usage",
-      "created_at": "2026-04-27T00:00:00Z"
-    },
-    {
-      "id": "e1a1f2c3-4b5d-6e7f-8a9b-0c1d2e3f4a5b",
-      "word": "visionary",
-      "definition": "think ahead with strategic foresight",
-      "example": "The leader was visionary in shaping the roadmap",
-      "synonyms": ["foresee", "anticipate"],
-      "part_of_speech": "adjective",
-      "tags": ["leadership"],
-      "notes": "Powerful leadership word for thinking"
-    },
-    {
-      "id": "f2b3c4d5-6e7f-8a9b-0c1d-2e3f4a5b6c7d",
-      "word": "inspire",
-      "definition": "motivate and uplift through speech",
-      "example": "She can inspire the team during tough sprints",
-      "synonyms": ["motivate", "encourage"],
-      "part_of_speech": "verb",
-      "tags": ["speaking", "leadership"],
-      "notes": "Leadership speaking verb"
-    },
-    {
-      "id": "a3c4d5e6-7f8a-9b0c-1d2e-3f4a5b6c7d8e",
-      "word": "strategize",
-      "definition": "plan actions with strategic insight",
-      "example": "We need to strategize the product rollout",
-      "synonyms": ["plan", "scheme"],
-      "part_of_speech": "verb",
-      "tags": ["thinking", "leadership"],
-      "notes": "Thinking and leadership verb"
-    },
-    {
-      "id": "b4d5e6f7-8a9b-0c1d-2e3f-4a5b6c7d8e9f",
-      "word": "communicate",
-      "definition": "convey ideas clearly and effectively",
-      "example": "Leaders must communicate the vision",
-      "synonyms": ["convey", "articulate"],
-      "part_of_speech": "verb",
-      "tags": ["speaking"],
-      "notes": "Key speaking verb"
-    },
-    {
-      "id": "c5e6f7g8-9a0b-1c2d-3e4f-5a6b7c8d9e0f",
-      "word": "mentor",
-      "definition": "guide and develop others",
-      "example": "Tech leads should mentor junior engineers",
-      "synonyms": ["coach", "guide"],
-      "part_of_speech": "verb",
-      "tags": ["leadership"],
-      "notes": "Leadership development verb"
-    },
-    {
-      "id": "d6f7g8h9-0a1b-2c3d-4e5f-6a7b8c9d0e1f",
-      "word": "innovate",
-      "definition": "introduce novel ideas or methods",
-      "example": "Leaders must innovate to stay ahead",
-      "synonyms": ["create", "revolutionize"],
-      "part_of_speech": "verb",
-      "tags": ["thinking", "leadership"],
-      "notes": "Thinking and leadership verb"
-    },
-    {
-      "id": "e7g8h9i0-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
-      "word": "empower",
-      "definition": "grant authority and confidence",
-      "example": "Great tech leaders empower their teams",
-      "synonyms": ["authorize", "enable"],
-      "part_of_speech": "verb",
-      "tags": ["leadership", "speaking"],
-      "notes": "Leadership empowerment verb"
-    }
-  ]
-}
+    "exported_at": "2026-04-27T00:00:00Z",
+    "count": 90,
+    "words": [
+      {
+        "id": "a1b2c3d4-0001-4000-8000-000000000001",
+        "word": "acknowledge",
+        "definition": "Explicitly recognize a fact, concern, or contribution so it is not left hanging.",
+        "example": "____ the team's weekend effort in the retrospective before moving to what went wrong.",
+        "synonyms": ["recognize", "affirm", "validate"],
+        "part_of_speech": "verb",
+        "tags": ["communication", "speaking"],
+        "notes": "Use to build rapport before pivoting to critique.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0002-4000-8000-000000000002",
+        "word": "advocate",
+        "definition": "Publicly and actively support a position, idea, or person using reasoned argument.",
+        "example": "____ for the junior engineer's proposal in the architecture review with specific evidence.",
+        "synonyms": ["champion", "support", "push for"],
+        "part_of_speech": "verb",
+        "tags": ["communication", "speaking"],
+        "notes": "Implies active defense of an idea.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0003-4000-8000-000000000003",
+        "word": "align",
+        "definition": "Bring people to a shared understanding of goals and direction before execution starts.",
+        "example": "____ with the PM and design lead on success criteria before starting the sprint.",
+        "synonyms": ["agree", "sync", "coordinate"],
+        "part_of_speech": "verb",
+        "tags": ["communication", "speaking"],
+        "notes": "Critical for cross-functional success.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0004-4000-8000-000000000004",
+        "word": "anticipate",
+        "definition": "Think ahead to identify what is likely to happen and prepare for it proactively.",
+        "example": "____ the compliance questions and prepare the security documentation before the demo.",
+        "synonyms": ["foresee", "plan for", "get ahead of"],
+        "part_of_speech": "verb",
+        "tags": ["execution", "delivery"],
+        "notes": "Shows high-level maturity in planning.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0005-4000-8000-000000000005",
+        "word": "arbitrate",
+        "definition": "Resolve a conflict between two positions by applying a principled framework.",
+        "example": "When the platform and product teams deadlock on the API contract, the engineering lead must ____.",
+        "synonyms": ["mediate", "resolve", "adjudicate"],
+        "part_of_speech": "verb",
+        "tags": ["decision making"],
+        "notes": "Implies an authoritative, fair resolution.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0006-4000-8000-000000000006",
+        "word": "articulate",
+        "definition": "Express an idea clearly and precisely so the listener can act on it.",
+        "example": "____ the product vision in one sentence that a new hire could repeat back accurately.",
+        "synonyms": ["express", "convey", "phrase"],
+        "part_of_speech": "verb",
+        "tags": ["communication", "speaking"],
+        "notes": "Focuses on clarity of delivery.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0007-4000-8000-000000000007",
+        "word": "ascertain",
+        "definition": "Confirm a fact with certainty through investigation before acting on it.",
+        "example": "____ whether the slowdown is client-side or server-side before touching the backend.",
+        "synonyms": ["determine", "verify", "establish"],
+        "part_of_speech": "verb",
+        "tags": ["analysis", "thinking"],
+        "notes": "Standard for technical investigation.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0008-4000-8000-000000000008",
+        "word": "automate",
+        "definition": "Replace a manual, repetitive process with a system that runs without human intervention.",
+        "example": "____ the nightly regression suite so engineers get failure reports before standup.",
+        "synonyms": ["script", "systematize", "pipeline"],
+        "part_of_speech": "verb",
+        "tags": ["execution", "delivery"],
+        "notes": "Core tech efficiency term.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0009-4000-8000-000000000009",
+        "word": "benchmark",
+        "definition": "Measure performance against a defined standard or competing reference point.",
+        "example": "____ the new retrieval pipeline against the baseline before claiming improvement.",
+        "synonyms": ["measure", "compare", "evaluate"],
+        "part_of_speech": "verb",
+        "tags": ["analysis", "thinking"],
+        "notes": "Essential for performance-oriented roles.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0010-4000-8000-000000000010",
+        "word": "calibrate",
+        "definition": "Adjust judgment or estimates to account for new information or bias.",
+        "example": "____ the timeline estimate once the tech lead has fully reviewed the spec.",
+        "synonyms": ["tune", "adjust", "refine"],
+        "part_of_speech": "verb",
+        "tags": ["decision making"],
+        "notes": "Commonly used in project planning and ML.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0011-4000-8000-000000000011",
+        "word": "clarify",
+        "definition": "Remove ambiguity by restating something more precisely before work begins.",
+        "example": "____ whether 'done' means code-complete or fully deployed before the standup ends.",
+        "synonyms": ["explain", "specify", "disambiguate"],
+        "part_of_speech": "verb",
+        "tags": ["communication", "speaking"],
+        "notes": "Prevents wasted engineering effort.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0012-4000-8000-000000000012",
+        "word": "co-create",
+        "definition": "Build something jointly with stakeholders so the output reflects shared ownership.",
+        "example": "____ the AI product roadmap with the top ten enterprise customers before the planning cycle closes.",
+        "synonyms": ["build together", "collaborate", "co-design"],
+        "part_of_speech": "verb",
+        "tags": ["collaboration", "leadership"],
+        "notes": "Implies partnership over simple feedback.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0013-4000-8000-000000000013",
+        "word": "consensus",
+        "definition": "General agreement reached through open discussion rather than top-down mandate.",
+        "example": "Build ____ on the logging standard before it forks into per-team implementations.",
+        "synonyms": ["agreement", "alignment", "accord"],
+        "part_of_speech": "noun",
+        "tags": ["collaboration", "leadership"],
+        "notes": "Crucial for decentralized or agile teams.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0014-4000-8000-000000000014",
+        "word": "constraint",
+        "definition": "A boundary or condition that limits the available solution space.",
+        "example": "State the ____ upfront: the fix must deploy without a database restart.",
+        "synonyms": ["limit", "boundary", "restriction"],
+        "part_of_speech": "noun",
+        "tags": ["decision making"],
+        "notes": "Often used in system design and math.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0015-4000-8000-000000000015",
+        "word": "contain",
+        "definition": "Prevent a problem from spreading to other parts of the system while the fix is prepared.",
+        "example": "____ the blast radius by disabling the integration before diagnosing the root cause.",
+        "synonyms": ["isolate", "limit", "quarantine"],
+        "part_of_speech": "verb",
+        "tags": ["problem solving"],
+        "notes": "Specific to incident response.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0016-4000-8000-000000000016",
+        "word": "contextualize",
+        "definition": "Place a data point or decision within its broader setting to prevent misreading.",
+        "example": "____ the metric drop — it follows a traffic spike from a viral post, not a bug.",
+        "synonyms": ["frame", "situate", "qualify"],
+        "part_of_speech": "verb",
+        "tags": ["analysis", "thinking"],
+        "notes": "Prevents overreaction to noise in data.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0017-4000-8000-000000000017",
+        "word": "converge",
+        "definition": "Move from multiple competing options toward a shared, agreed direction.",
+        "example": "After two design reviews, the team ____ on an event-driven architecture.",
+        "synonyms": ["align", "agree", "consolidate"],
+        "part_of_speech": "verb",
+        "tags": ["decision making"],
+        "notes": "Final stage of brainstorming/deliberation.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0018-4000-8000-000000000018",
+        "word": "coordinate",
+        "definition": "Organize the actions of multiple teams so they move together without conflict.",
+        "example": "____ the model release across ML, infra, and product before flipping the traffic switch.",
+        "synonyms": ["sync", "orchestrate", "organize"],
+        "part_of_speech": "verb",
+        "tags": ["collaboration", "leadership"],
+        "notes": "Focuses on logistics and timing.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0019-4000-8000-000000000019",
+        "word": "corroborate",
+        "definition": "Support a finding with independent evidence from a second source.",
+        "example": "____ the anomaly in the dashboard with raw log data before escalating.",
+        "synonyms": ["confirm", "validate", "cross-check"],
+        "part_of_speech": "verb",
+        "tags": ["analysis", "thinking"],
+        "notes": "Standard for high-stakes bug reporting.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0020-4000-8000-000000000020",
+        "word": "decompose",
+        "definition": "Break a complex problem into smaller, independently solvable parts.",
+        "example": "____ the latency issue into network, compute, and I/O components before profiling.",
+        "synonyms": ["break down", "dissect", "factor"],
+        "part_of_speech": "verb",
+        "tags": ["analysis", "thinking"],
+        "notes": "Core software engineering skill.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0021-4000-8000-000000000021",
+        "word": "decouple",
+        "definition": "Remove tight dependencies between components so each can change independently.",
+        "example": "____ the billing service from the core API before the next major refactor begins.",
+        "synonyms": ["separate", "isolate", "disentangle"],
+        "part_of_speech": "verb",
+        "tags": ["problem solving"],
+        "notes": "Key for microservices architecture.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0022-4000-8000-000000000022",
+        "word": "defer",
+        "definition": "Intentionally delay a decision until more information or clarity is available.",
+        "example": "____ the infrastructure vendor choice until the load-testing results are in next week.",
+        "synonyms": ["postpone", "delay", "suspend"],
+        "part_of_speech": "verb",
+        "tags": ["decision making"],
+        "notes": "Strategic delay, not procrastination.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0023-4000-8000-000000000023",
+        "word": "delegate",
+        "definition": "Assign responsibility for a task to someone else while retaining accountability.",
+        "example": "____ the vendor evaluation to the senior engineer and ask for a written recommendation.",
+        "synonyms": ["assign", "entrust", "hand off"],
+        "part_of_speech": "verb",
+        "tags": ["collaboration", "leadership"],
+        "notes": "Key leadership growth skill.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0024-4000-8000-000000000024",
+        "word": "deprecate",
+        "definition": "Mark a feature, API, or practice as obsolete and schedule its removal.",
+        "example": "____ the v1 endpoint with a 90-day sunset notice before taking it permanently offline.",
+        "synonyms": ["retire", "sunset", "phase out"],
+        "part_of_speech": "verb",
+        "tags": ["problem solving"],
+        "notes": "Critical for library/platform maintenance.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0025-4000-8000-000000000025",
+        "word": "diagnose",
+        "definition": "Identify the root cause of a problem through systematic examination.",
+        "example": "____ the memory leak before patching — a fix without a root cause will recur.",
+        "synonyms": ["identify", "pinpoint", "trace"],
+        "part_of_speech": "verb",
+        "tags": ["problem solving"],
+        "notes": "Scientific approach to bug fixing.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0026-4000-8000-000000000026",
+        "word": "discern",
+        "definition": "Identify subtle differences or meaningful patterns amid noise.",
+        "example": "____ which failure signals are systemic versus isolated before writing a postmortem.",
+        "synonyms": ["perceive", "detect", "differentiate"],
+        "part_of_speech": "verb",
+        "tags": ["analysis", "thinking"],
+        "notes": "High-level perception skill.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0027-4000-8000-000000000027",
+        "word": "distill",
+        "definition": "Extract the core insight from a large body of data or discussion.",
+        "example": "____ a month of user interviews into three product bets for the planning doc.",
+        "synonyms": ["summarize", "extract", "synthesize"],
+        "part_of_speech": "verb",
+        "tags": ["analysis", "thinking"],
+        "notes": "Essential for reporting to executives.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0028-4000-8000-000000000028",
+        "word": "drive",
+        "definition": "Push a workstream forward with consistent energy and clear ownership.",
+        "example": "____ the migration to completion by setting weekly milestones and unblocking blockers proactively.",
+        "synonyms": ["lead", "push", "advance"],
+        "part_of_speech": "verb",
+        "tags": ["execution", "delivery"],
+        "notes": "Implies proactive leadership.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0029-4000-8000-000000000029",
+        "word": "empower",
+        "definition": "Give someone the authority, tools, and confidence to act and decide independently.",
+        "example": "____ the team to resolve day-to-day incidents without escalating to the manager.",
+        "synonyms": ["enable", "authorize", "trust"],
+        "part_of_speech": "verb",
+        "tags": ["collaboration", "leadership"],
+        "notes": "Central to modern management.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0030-4000-8000-000000000030",
+        "word": "escalate",
+        "definition": "Raise an issue to a higher authority when it exceeds local capacity.",
+        "example": "____ the data exposure risk to the CISO immediately — this is beyond team scope.",
+        "synonyms": ["raise", "surface", "elevate"],
+        "part_of_speech": "verb",
+        "tags": ["problem solving"],
+        "notes": "Professional procedure for risk management.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0031-4000-8000-000000000031",
+        "word": "expound",
+        "definition": "Explain a topic in depth, going well beyond the surface level.",
+        "example": "____ on the threat model before the compliance team signs off on the architecture.",
+        "synonyms": ["elaborate", "detail", "expand on"],
+        "part_of_speech": "verb",
+        "tags": ["communication", "speaking"],
+        "notes": "Use when high-detail explanation is needed.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0032-4000-8000-000000000032",
+        "word": "extrapolate",
+        "definition": "Project a trend or pattern beyond the range of observed data.",
+        "example": "____ the growth curve to estimate infrastructure costs at 10x current load.",
+        "synonyms": ["project", "forecast", "extend"],
+        "part_of_speech": "verb",
+        "tags": ["analysis", "thinking"],
+        "notes": "Mathematical and strategic forecasting.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0033-4000-8000-000000000033",
+        "word": "finalize",
+        "definition": "Complete deliberation and lock in a decision so work can proceed.",
+        "example": "____ the API contract by end of day so the frontend team can unblock their sprint.",
+        "synonyms": ["commit", "close", "lock in"],
+        "part_of_speech": "verb",
+        "tags": ["decision making"],
+        "notes": "Moving from discussion to action.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0034-4000-8000-000000000034",
+        "word": "foster",
+        "definition": "Actively cultivate a condition or behavior so it grows sustainably over time.",
+        "example": "____ a culture of blameless postmortems so engineers surface incidents early.",
+        "synonyms": ["cultivate", "nurture", "build"],
+        "part_of_speech": "verb",
+        "tags": ["collaboration", "leadership"],
+        "notes": "Relates to long-term environment building.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0035-4000-8000-000000000035",
+        "word": "frame",
+        "definition": "Present information in a way that shapes how it is understood and acted on.",
+        "example": "____ the delay as a quality decision, not a planning failure, when briefing stakeholders.",
+        "synonyms": ["position", "contextualize", "cast"],
+        "part_of_speech": "verb",
+        "tags": ["communication", "speaking"],
+        "notes": "Strategic communication tool.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0036-4000-8000-000000000036",
+        "word": "galvanize",
+        "definition": "Energize a group into decisive, coordinated action around a shared goal.",
+        "example": "____ the cross-functional pod around the customer retention crisis before it becomes existential.",
+        "synonyms": ["mobilize", "energize", "rally"],
+        "part_of_speech": "verb",
+        "tags": ["collaboration", "leadership"],
+        "notes": "Stronger than 'encourage'.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0037-4000-8000-000000000037",
+        "word": "harden",
+        "definition": "Make a system more resistant to failure, attack, or misuse through design.",
+        "example": "____ the public API endpoints against prompt injection before GA launch.",
+        "synonyms": ["secure", "fortify", "strengthen"],
+        "part_of_speech": "verb",
+        "tags": ["problem solving"],
+        "notes": "Standard term for security/reliability.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0038-4000-8000-000000000038",
+        "word": "hedge",
+        "definition": "Reduce commitment to reduce downside risk without fully abandoning the option.",
+        "example": "____ by shipping behind a feature flag so a rollback requires no deployment.",
+        "synonyms": ["qualify", "limit", "de-risk"],
+        "part_of_speech": "verb",
+        "tags": ["decision making"],
+        "notes": "Protective strategic move.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0039-4000-8000-000000000039",
+        "word": "implication",
+        "definition": "A consequence that logically follows from an action, decision, or finding.",
+        "example": "Spell out the ____: deleting that table removes the full audit trail permanently.",
+        "synonyms": ["consequence", "impact", "downstream effect"],
+        "part_of_speech": "noun",
+        "tags": ["problem solving"],
+        "notes": "Used to explain 'the why' of risks.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0040-4000-8000-000000000040",
+        "word": "infer",
+        "definition": "Draw a conclusion from indirect evidence rather than direct observation.",
+        "example": "From the latency spike pattern, ____ that cache eviction is misfiring at peak load.",
+        "synonyms": ["deduce", "conclude", "reason"],
+        "part_of_speech": "verb",
+        "tags": ["analysis", "thinking"],
+        "notes": "Logic-driven conclusion.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0041-4000-8000-000000000041",
+        "word": "influence",
+        "definition": "Shape someone's thinking through evidence and credibility, not authority.",
+        "example": "____ the roadmap by bringing data to the planning meeting, not by lobbying the exec.",
+        "synonyms": ["persuade", "guide", "sway"],
+        "part_of_speech": "verb",
+        "tags": ["collaboration", "leadership"],
+        "notes": "Essential soft skill for non-managers.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0042-4000-8000-000000000042",
+        "word": "inspire",
+        "definition": "Motivate others to act through compelling communication.",
+        "example": "Use the all-hands to ____ the team with a clear picture of the year's mission.",
+        "synonyms": ["motivate", "energize", "uplift"],
+        "part_of_speech": "verb",
+        "tags": ["collaboration", "leadership"],
+        "notes": "Vision-level communication.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0043-4000-8000-000000000043",
+        "word": "instrument",
+        "definition": "Add observability hooks to a system so its behavior can be measured.",
+        "example": "____ the new inference service with distributed tracing before it handles real traffic.",
+        "synonyms": ["observe", "monitor", "telemetrize"],
+        "part_of_speech": "verb",
+        "tags": ["execution", "delivery"],
+        "notes": "Standard DevOps/SRE verb.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0044-4000-8000-000000000044",
+        "word": "interrogate",
+        "definition": "Question data or assumptions rigorously to surface hidden flaws.",
+        "example": "____ the training dataset for label leakage before trusting the eval metrics.",
+        "synonyms": ["probe", "challenge", "scrutinize"],
+        "part_of_speech": "verb",
+        "tags": ["analysis", "thinking"],
+        "notes": "High-intensity analysis.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0045-4000-8000-000000000045",
+        "word": "isolate",
+        "definition": "Separate a suspect component from the rest of the system to test it independently.",
+        "example": "____ the flaky test in its own run to confirm whether it's an environment issue.",
+        "synonyms": ["contain", "separate", "quarantine"],
+        "part_of_speech": "verb",
+        "tags": ["problem solving"],
+        "notes": "Key for modular debugging.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0046-4000-8000-000000000046",
+        "word": "iterate",
+        "definition": "Improve through deliberate cycles of build, measure, and learn.",
+        "example": "____ on the prompt template weekly using the prior week's failure cases as test inputs.",
+        "synonyms": ["refine", "cycle", "improve"],
+        "part_of_speech": "verb",
+        "tags": ["execution", "delivery"],
+        "notes": "Fundamental Agile concept.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0047-4000-8000-000000000047",
+        "word": "justify",
+        "definition": "Provide sound reasoning to defend a decision when challenged.",
+        "example": "____ the added latency by showing the security benefit outweighs the cost.",
+        "synonyms": ["defend", "validate", "support"],
+        "part_of_speech": "verb",
+        "tags": ["decision making"],
+        "notes": "Logical defense.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0048-4000-8000-000000000048",
+        "word": "mentor",
+        "definition": "Guide and develop someone's skills and professional judgment over time.",
+        "example": "____ the new grad through their first production incident, not just the postmortem debrief.",
+        "synonyms": ["coach", "guide", "develop"],
+        "part_of_speech": "verb",
+        "tags": ["collaboration", "leadership"],
+        "notes": "Focuses on long-term person development.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0049-4000-8000-000000000049",
+        "word": "mitigate",
+        "definition": "Reduce the severity or likelihood of a risk before it materializes.",
+        "example": "____ the deployment risk by shipping behind a feature flag with a one-click rollback.",
+        "synonyms": ["reduce", "limit", "de-risk"],
+        "part_of_speech": "verb",
+        "tags": ["execution", "delivery"],
+        "notes": "Common in project risk management.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0050-4000-8000-000000000050",
+        "word": "narrate",
+        "definition": "Guide an audience through data or a process with a clear through-line.",
+        "example": "____ the metrics walk-through so the board sees cause and effect, not just numbers.",
+        "synonyms": ["walk through", "guide", "storytell"],
+        "part_of_speech": "verb",
+        "tags": ["communication", "speaking"],
+        "notes": "High-level presentation skill.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0051-4000-8000-000000000051",
+        "word": "narrow",
+        "definition": "Reduce the space of possible causes or solutions to an actionable set.",
+        "example": "____ the suspect list to two services before pulling thread dumps from all twelve.",
+        "synonyms": ["focus", "reduce", "constrain"],
+        "part_of_speech": "verb",
+        "tags": ["problem solving"],
+        "notes": "Used during initial discovery.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0052-4000-8000-000000000052",
+        "word": "nuance",
+        "definition": "A subtle distinction that meaningfully changes interpretation.",
+        "example": "The ____ between 'not yet tested' and 'tested and passing' matters in a release note.",
+        "synonyms": ["subtlety", "distinction", "shade"],
+        "part_of_speech": "noun",
+        "tags": ["communication", "speaking"],
+        "notes": "Essential for precision in communication.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0053-4000-8000-000000000053",
+        "word": "operationalize",
+        "definition": "Turn a strategy or concept into a concrete, repeatable process.",
+        "example": "____ the on-call rotation with runbooks, escalation paths, and SLA targets.",
+        "synonyms": ["implement", "systematize", "institutionalize"],
+        "part_of_speech": "verb",
+        "tags": ["execution", "delivery"],
+        "notes": "Bridge between strategy and daily work.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0054-4000-8000-000000000054",
+        "word": "optimize",
+        "definition": "Improve a system to get the best output within given constraints.",
+        "example": "____ the query plan before adding indexes — the explain output shows a full table scan.",
+        "synonyms": ["tune", "improve", "maximize"],
+        "part_of_speech": "verb",
+        "tags": ["execution", "delivery"],
+        "notes": "Resource efficiency term.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0055-4000-8000-000000000055",
+        "word": "orchestrate",
+        "definition": "Coordinate multiple moving parts or teams to execute a complex plan.",
+        "example": "____ the zero-downtime database migration across three engineering teams.",
+        "synonyms": ["coordinate", "conduct", "manage"],
+        "part_of_speech": "verb",
+        "tags": ["collaboration", "leadership"],
+        "notes": "Implies high complexity and movement.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0056-4000-8000-000000000056",
+        "word": "orient",
+        "definition": "Give someone the context they need to understand a situation and act.",
+        "example": "____ new engineers to the incident response process before they join the rotation.",
+        "synonyms": ["ground", "brief", "onboard"],
+        "part_of_speech": "verb",
+        "tags": ["communication", "speaking"],
+        "notes": "Essential for onboarding.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0057-4000-8000-000000000057",
+        "word": "own",
+        "definition": "Take full accountability for an outcome, not just assigned tasks.",
+        "example": "____ the post-mortem end-to-end — findings, action items, and follow-ups.",
+        "synonyms": ["take charge", "lead", "be accountable for"],
+        "part_of_speech": "verb",
+        "tags": ["execution", "delivery"],
+        "notes": "Reflects a 'Staff+' level of responsibility.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0058-4000-8000-000000000058",
+        "word": "persuade",
+        "definition": "Convince someone to change their view or take action through reasoning.",
+        "example": "____ the CTO with a cost-benefit analysis backed by real usage data.",
+        "synonyms": ["convince", "influence", "bring around"],
+        "part_of_speech": "verb",
+        "tags": ["communication", "speaking"],
+        "notes": "Evidence-based convincing.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0059-4000-8000-000000000059",
+        "word": "position",
+        "definition": "Deliberately present something in a way that shapes perceived value.",
+        "example": "____ the refactor as enabling the next two product bets, not as maintenance work.",
+        "synonyms": ["frame", "present", "pitch"],
+        "part_of_speech": "verb",
+        "tags": ["communication", "speaking"],
+        "notes": "Marketing-adjacent skill for devs.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0060-4000-8000-000000000060",
+        "word": "prioritize",
+        "definition": "Rank competing items by impact and act on the highest-value work first.",
+        "example": "____ the P0 stability issues over new feature work until the error rate drops.",
+        "synonyms": ["rank", "order", "triage"],
+        "part_of_speech": "verb",
+        "tags": ["decision making"],
+        "notes": "The foundation of product management.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0061-4000-8000-000000000061",
+        "word": "rationale",
+        "definition": "The explicit reasoning and logic behind a decision.",
+        "example": "Document the ____ for this architecture choice so future engineers understand the tradeoffs.",
+        "synonyms": ["reasoning", "logic", "justification"],
+        "part_of_speech": "noun",
+        "tags": ["decision making"],
+        "notes": "Vital for ADRs (Architecture Decision Records).",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0062-4000-8000-000000000062",
+        "word": "rationalize",
+        "definition": "Justify a weak or predetermined decision with post-hoc reasoning.",
+        "example": "We are ____ the deadline — the real driver is investor pressure, not readiness.",
+        "synonyms": ["excuse", "spin", "backfill"],
+        "part_of_speech": "verb",
+        "tags": ["decision making"],
+        "notes": "Usually carries a slightly negative connotation.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0063-4000-8000-000000000063",
+        "word": "refine",
+        "definition": "Make incremental improvements to something already functional.",
+        "example": "____ the onboarding flow copy based on the first cohort's drop-off heatmaps.",
+        "synonyms": ["improve", "polish", "iterate on"],
+        "part_of_speech": "verb",
+        "tags": ["execution", "delivery"],
+        "notes": "Polishing stage of dev.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0064-4000-8000-000000000064",
+        "word": "reframe",
+        "definition": "Present an existing situation from a different angle to shift understanding.",
+        "example": "____ the budget cut as a focus exercise — fewer bets, deeper investment per initiative.",
+        "synonyms": ["reposition", "recast", "recontextualize"],
+        "part_of_speech": "verb",
+        "tags": ["communication", "speaking"],
+        "notes": "Powerful psychological and strategic tool.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0065-4000-8000-000000000065",
+        "word": "reinforce",
+        "definition": "Strengthen a safeguard or behavior by adding structural enforcement.",
+        "example": "____ the guardrail with an automated lint rule, not just a code review comment.",
+        "synonyms": ["strengthen", "enforce", "harden"],
+        "part_of_speech": "verb",
+        "tags": ["problem solving"],
+        "notes": "Applying structure to behavior.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0066-4000-8000-000000000066",
+        "word": "remediate",
+        "definition": "Take corrective action to restore a system to a healthy state.",
+        "example": "____ the misconfigured IAM roles before the next security audit cycle.",
+        "synonyms": ["fix", "correct", "restore"],
+        "part_of_speech": "verb",
+        "tags": ["problem solving"],
+        "notes": "Formal term for high-stakes fixes.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0067-4000-8000-000000000067",
+        "word": "resolve",
+        "definition": "Fix a problem completely at the root so it does not recur.",
+        "example": "____ the race condition at the source — use a lock, not a retry wrapper.",
+        "synonyms": ["fix", "solve", "remediate"],
+        "part_of_speech": "verb",
+        "tags": ["problem solving"],
+        "notes": "Finality in bug tracking.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0068-4000-8000-000000000068",
+        "word": "rollback",
+        "definition": "Revert a system to a previous known-good state after a failed change.",
+        "example": "____ the model update immediately — the precision drop is outside bounds.",
+        "synonyms": ["revert", "undo", "restore"],
+        "part_of_speech": "verb",
+        "tags": ["problem solving"],
+        "notes": "Standard CI/CD emergency action.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0069-4000-8000-000000000069",
+        "word": "scope",
+        "definition": "Define the explicit boundaries of what is included in a project.",
+        "example": "____ the MVP tightly — real-time collaboration is v2, not v1.",
+        "synonyms": ["bound", "define", "frame"],
+        "part_of_speech": "verb",
+        "tags": ["decision making"],
+        "notes": "Used to avoid 'scope creep'.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0070-4000-8000-000000000070",
+        "word": "scrutinize",
+        "definition": "Inspect something closely and in detail to surface hidden issues.",
+        "example": "____ the model's output distribution on edge cases before the A/B test goes live.",
+        "synonyms": ["inspect", "examine", "audit"],
+        "part_of_speech": "verb",
+        "tags": ["analysis", "thinking"],
+        "notes": "High-detail review.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0071-4000-8000-000000000071",
+        "word": "sequence",
+        "definition": "Arrange tasks in the right order to avoid blockers.",
+        "example": "____ the data migration before the schema change, not after, to protect data integrity.",
+        "synonyms": ["order", "schedule", "phase"],
+        "part_of_speech": "verb",
+        "tags": ["execution", "delivery"],
+        "notes": "Critical for dependency management.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0072-4000-8000-000000000072",
+        "word": "signal",
+        "definition": "Communicate intent or priority implicitly through deliberate action.",
+        "example": "Shipping the internal tooling first ____ that developer experience is a priority.",
+        "synonyms": ["indicate", "convey", "telegraph"],
+        "part_of_speech": "verb",
+        "tags": ["communication", "speaking"],
+        "notes": "High-level strategy indicator.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0073-4000-8000-000000000073",
+        "word": "simplify",
+        "definition": "Reduce complexity without losing the essential behavior of a system.",
+        "example": "____ the onboarding flow — each extra step reduces completion rate by roughly 8%.",
+        "synonyms": ["streamline", "reduce", "pare down"],
+        "part_of_speech": "verb",
+        "tags": ["problem solving"],
+        "notes": "Essential for UX and clean code.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0074-4000-8000-000000000074",
+        "word": "sponsor",
+        "definition": "Use positional authority to actively champion someone's idea or work.",
+        "example": "____ the staff engineer promotion by sharing specific delivery examples with the committee.",
+        "synonyms": ["champion", "advocate", "back"],
+        "part_of_speech": "verb",
+        "tags": ["collaboration", "leadership"],
+        "notes": "Active career support.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0075-4000-8000-000000000075",
+        "word": "steer",
+        "definition": "Adjust the direction of a project or conversation while in motion.",
+        "example": "____ the architecture debate back to the core constraint when it drifts.",
+        "synonyms": ["direct", "guide", "navigate"],
+        "part_of_speech": "verb",
+        "tags": ["collaboration", "leadership"],
+        "notes": "Active facilitation.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0076-4000-8000-000000000076",
+        "word": "strategize",
+        "definition": "Devise a plan of action that accounts for constraints and long-term goals.",
+        "example": "____ the AI talent plan for H2 before headcount freeze decisions are made.",
+        "synonyms": ["plan", "devise", "map out"],
+        "part_of_speech": "verb",
+        "tags": ["collaboration", "leadership"],
+        "notes": "High-level goal planning.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0077-4000-8000-000000000077",
+        "word": "stratify",
+        "definition": "Segment data into distinct layers to reveal patterns hidden in the aggregate.",
+        "example": "____ error rates by region and device type before concluding it's a backend issue.",
+        "synonyms": ["segment", "layer", "classify"],
+        "part_of_speech": "verb",
+        "tags": ["analysis", "thinking"],
+        "notes": "Statistical analysis term.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0078-4000-8000-000000000078",
+        "word": "streamline",
+        "definition": "Eliminate unnecessary steps to make a process faster and less error-prone.",
+        "example": "____ the approval workflow by collapsing four async sign-offs into one structured review.",
+        "synonyms": ["simplify", "optimize", "tighten"],
+        "part_of_speech": "verb",
+        "tags": ["execution", "delivery"],
+        "notes": "Process improvement.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0079-4000-8000-000000000079",
+        "word": "stress-test",
+        "definition": "Push an assumption or plan to its limits to reveal where it breaks.",
+        "example": "____ the go-to-market assumptions against a scenario where adoption is 50% of forecast.",
+        "synonyms": ["pressure-test", "challenge", "probe"],
+        "part_of_speech": "verb",
+        "tags": ["decision making"],
+        "notes": "Applying extreme conditions to theory or code.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0080-4000-8000-000000000080",
+        "word": "substantiate",
+        "definition": "Back a claim with concrete, verifiable evidence.",
+        "example": "____ the performance improvement with before-and-after p99 benchmarks.",
+        "synonyms": ["prove", "validate", "support"],
+        "part_of_speech": "verb",
+        "tags": ["analysis", "thinking"],
+        "notes": "Requirement for senior-level proposals.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0081-4000-8000-000000000081",
+        "word": "surface",
+        "definition": "Bring a hidden issue, risk, or insight into the open.",
+        "example": "____ the dependency conflict in the planning meeting rather than absorbing it silently.",
+        "synonyms": ["raise", "highlight", "flag"],
+        "part_of_speech": "verb",
+        "tags": ["communication", "speaking"],
+        "notes": "Common in agile team communication.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0082-4000-8000-000000000082",
+        "word": "synthesize",
+        "definition": "Combine information from multiple sources into a coherent, unified insight.",
+        "example": "____ the research findings, user feedback, and usage data into a recommendation.",
+        "synonyms": ["integrate", "combine", "distill"],
+        "part_of_speech": "verb",
+        "tags": ["analysis", "thinking"],
+        "notes": "High-level data merging.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0083-4000-8000-000000000083",
+        "word": "trade-off",
+        "definition": "An exchange where gaining one benefit requires accepting a cost elsewhere.",
+        "example": "Acknowledge the ____: faster delivery now means higher technical debt in Q3.",
+        "synonyms": ["compromise", "balance", "tension"],
+        "part_of_speech": "noun",
+        "tags": ["decision making"],
+        "notes": "Core architecture concept.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0084-4000-8000-000000000084",
+        "word": "triage",
+        "definition": "Rapidly assess and rank problems by urgency and impact to act in order.",
+        "example": "____ the incoming incident reports before standup — not everything blocks the release.",
+        "synonyms": ["prioritize", "sort", "assess"],
+        "part_of_speech": "verb",
+        "tags": ["problem solving"],
+        "notes": "Borrowed from medical; standard in incident management.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0085-4000-8000-000000000085",
+        "word": "triangulate",
+        "definition": "Confirm a finding by cross-referencing multiple independent data sources.",
+        "example": "____ the churn signal across support tickets, NPS scores, and session recordings.",
+        "synonyms": ["cross-reference", "validate", "corroborate"],
+        "part_of_speech": "verb",
+        "tags": ["analysis", "thinking"],
+        "notes": "Scientific data validation.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0086-4000-8000-000000000086",
+        "word": "unblock",
+        "definition": "Remove an obstacle preventing another person or team from making progress.",
+        "example": "____ the frontend team by providing mock API responses before the contract is finalized.",
+        "synonyms": ["enable", "clear", "resolve"],
+        "part_of_speech": "verb",
+        "tags": ["execution", "delivery"],
+        "notes": "Critical for team lead roles.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0087-4000-8000-000000000087",
+        "word": "validate",
+        "definition": "Confirm that something meets requirements or that an assumption holds in reality.",
+        "example": "____ the new checkout flow with ten real users before the full rollout.",
+        "synonyms": ["verify", "confirm", "test"],
+        "part_of_speech": "verb",
+        "tags": ["execution", "delivery"],
+        "notes": "Experimental and functional check.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0088-4000-8000-000000000088",
+        "word": "version",
+        "definition": "Create a labeled, reproducible snapshot of an artifact so changes are trackable.",
+        "example": "____ the model configuration alongside the training code so experiments are reproducible.",
+        "synonyms": ["snapshot", "tag", "track"],
+        "part_of_speech": "verb",
+        "tags": ["execution", "delivery"],
+        "notes": "Standard dev practice applied to all assets.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0089-4000-8000-000000000089",
+        "word": "visionary",
+        "definition": "Able to think strategically and far ahead with clear, actionable foresight.",
+        "example": "A ____ engineering leader anticipates platform needs two years before the roadmap does.",
+        "synonyms": ["foresighted", "strategic", "forward-thinking"],
+        "part_of_speech": "adjective",
+        "tags": ["collaboration", "leadership"],
+        "notes": "High-level leadership descriptor.",
+        "created_at": "2026-04-27T00:00:00Z"
+      },
+      {
+        "id": "a1b2c3d4-0090-4000-8000-000000000090",
+        "word": "weigh",
+        "definition": "Compare options systematically against each other before committing.",
+        "example": "____ the build-vs-buy options against the six-month runway and team capacity.",
+        "synonyms": ["compare", "evaluate", "assess"],
+        "part_of_speech": "verb",
+        "tags": ["decision making"],
+        "notes": "Analytical comparison stage.",
+        "created_at": "2026-04-27T00:00:00Z"
+      }
+    ]
+  }
