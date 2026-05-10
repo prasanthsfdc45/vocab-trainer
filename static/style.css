@@ -1,9 +1,11 @@
-body {
+  /* Base styles */
+  body {
     font-family: Arial, sans-serif;
     background-color: #f4f7fb;
     margin: 0;
+}
 
-/* Category bar styling */
+/* Category bar */
 .category-bar {
     display: flex;
     flex-wrap: wrap;
@@ -25,16 +27,12 @@ body {
     transition: background 0.2s, transform 0.2s;
     text-align: center;
 }
-
 .category-btn:hover {
     background: #f0faff;
     transform: translateY(-2px);
 }
 
-    padding: 0;
-    color: #1f2937;
-}
-
+/* Container */
 .container {
     max-width: 1100px;
     margin: auto;
@@ -44,74 +42,59 @@ body {
     flex-direction: column;
 }
 
+/* Hero */
 .hero-section {
     text-align: center;
     margin-bottom: 50px;
 }
+.hero-section h1 {font-size: 42px; margin-bottom: 10px;}
+.hero-section p   {font-size: 18px; color: #6b7280;}
 
-.hero-section h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
-}
-
-.hero-section p {
-    font-size: 18px;
-    color: #6b7280;
-}
-
-.category-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-}
-
-.category-card {
-    background: white;
-    padding: 25px;
-    border-radius: 18px;
-    text-decoration: none;
-    color: #111827;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    transition: transform 0.2s ease;
-}
-
-.category-card:hover {
-    transform: translateY(-5px);
-}
-
-.category-card h2 {
-    margin-bottom: 10px;
-}
-
-.category-card p {
-    color: #6b7280;
-}
-
+/* Quiz layout – question panel + history below it */
 .quiz-container {
     max-width: 1300px;
     margin: auto;
-    padding: 40px;
+    padding: 20px;
     display: flex;
-    gap: 30px;
+    flex-direction: column;   /* stack vertically */
+    gap: 20px;
 }
 
+/* Question panel – stays at ~60 % of the screen */
 .quiz-panel {
-    flex: 2;
     background: white;
     padding: 35px;
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    width: 100%;
 }
 
-.feedback-panel {
-    flex: 1;
+/* History panel – appears below the question, ~40 % of the screen */
+.history-panel {
     background: white;
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    min-height: 500px;
+    width: 100%;
+    overflow-y: auto;
+    min-height: 200px;
 }
 
+/* History list – grid layout similar to the question frame */
+.history-list {
+    display: grid;
+    gap: 15px;
+    margin-top: 10px;
+}
+.history-item {
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    font-size: 15px;
+}
+
+/* Tag badge */
 .tag-badge {
     display: inline-block;
     background-color: #e0f2fe;
@@ -122,17 +105,15 @@ body {
     font-weight: bold;
 }
 
+/* Sentence */
 .sentence {
     font-size: 34px;
     line-height: 1.5;
     margin-bottom: 35px;
 }
 
-.options-container {
-    display: grid;
-    gap: 15px;
-}
-
+/* Options */
+.options-container {display: grid; gap: 15px;}
 .option-card {
     display: flex;
     align-items: center;
@@ -145,16 +126,13 @@ body {
     transition: all 0.2s ease;
     font-size: 18px;
 }
-
 .option-card:hover {
     border-color: #3b82f6;
     background-color: #eff6ff;
 }
+.option-card input {transform: scale(1.4);}
 
-.option-card input {
-    transform: scale(1.4);
-}
-
+/* Submit button */
 .submit-btn {
     margin-top: 30px;
     width: 100%;
@@ -167,86 +145,174 @@ body {
     cursor: pointer;
     transition: background-color 0.2s ease;
 }
+.submit-btn:hover {background-color: #1d4ed8;}
 
-.submit-btn:hover {
-    background-color: #1d4ed8;
-}
+/* Result box (kept for compatibility – hidden when not needed) */
+.result-box {margin-top: 20px;}
 
-.result-box {
-    margin-top: 20px;
-}
-
-.info-block {
-    margin-top: 20px;
-}
-
-.label {
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
-.value {
-    color: #374151;
-    line-height: 1.6;
-}
-
-.empty-state {
-    margin-top: 30px;
-    color: #6b7280;
-    line-height: 1.6;
-}
-
+/* Responsive */
 @media (max-width: 900px) {
+    .quiz-container {flex-direction: column; padding
 
+⏺ /* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fb;
+    margin: 0;
+}
+
+/* Category bar */
+.category-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.category-btn {
+    background: white;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111827;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    transition: background 0.2s, transform 0.2s;
+    text-align: center;
+}
+.category-btn:hover {
+    background: #f0faff;
+    transform: translateY(-2px);
+}
+
+/* Container */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hero */
+.hero-section {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.hero-section h1 {font-size: 42px; margin-bottom: 10px;}
+.hero-section p   {font-size: 18px; color: #6b7280;}
+
+/* Quiz layout – question panel + history below it */
+.quiz-container {
+    max-width: 1300px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;   /* stack vertically */
+    gap: 20px;
+}
+
+/* Question panel – stays at ~60 % of the screen */
+.quiz-panel {
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    width: 100%;
+}
+
+/* History panel – appears below the question, ~40 % of the screen */
+.history-panel {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    width: 100%;
+    overflow-y: auto;
+    min-height: 200px;
+}
+
+/* History list – grid layout similar to the question frame */
+.history-list {
+    display: grid;
+    gap: 15px;
+    margin-top: 10px;
+}
+.history-item {
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    font-size: 15px;
+}
+
+/* Tag badge */
+.tag-badge {
+    display: inline-block;
+    background-color: #e0f2fe;
+    color: #0369a1;
+    padding: 8px 14px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Sentence */
+.sentence {
+    font-size: 34px;
+    line-height: 1.5;
+    margin-bottom: 35px;
+}
+
+/* Options */
+.options-container {display: grid; gap: 15px;}
+.option-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #f9fafb;
+    padding: 18px;
+    border-radius: 14px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+    font-size: 18
+
+⏺     }
+    .option-card:hover {
+        border-color: #3b82f6;
+        background-color: #eff6ff;
+    }
+    .option-card input {transform: scale(1.4);}
+
+/* Submit button */
+.submit-btn {
+    margin-top: 30px;
+    width: 100%;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 18px;
+    font-size: 18px;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.submit-btn:hover {background-color: #1d4ed8;}
+
+/* Result box (kept for compatibility – hidden when not needed) */
+.result-box {margin-top: 20px;}
+
+/* Responsive */
+@media (max-width: 900px) {
     .quiz-container {
         flex-direction: column;
         padding: 20px;
     }
-
-    .sentence {
-        font-size: 28px;
-    }
-
-    .container {
-        padding: 20px;
-    }
-}
-.top-nav {
-
-    max-width: 1300px;
-
-    margin: 20px auto 0 auto;
-
-    padding: 0 40px;
-
-}
-
-.back-btn {
-
-    display: inline-block;
-
-    text-decoration: none;
-
-    background-color: white;
-
-    color: #2563eb;
-
-    padding: 12px 18px;
-
-    border-radius: 12px;
-
-    font-weight: bold;
-
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-
-    transition: all 0.2s ease;
-
-}
-
-.back-btn:hover {
-
-    background-color: #eff6ff;
-
-    transform: translateY(-2px);
-
+    .sentence {font-size: 28px;}
+    .container {padding: 20px;}
 }
