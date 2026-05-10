@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session, jsonify
 import json
 import random
 
@@ -30,6 +30,14 @@ def get_tags(words):
             tags.add(tag)
 
     return sorted(list(tags))
+
+# API: return tags as JSON
+@app.route("/api/tags")
+def api_tags():
+    words = load_words()
+    tags = get_tags(words)
+    return jsonify(tags)
+
 
 
 # GET QUESTION WITHOUT REPEATING
@@ -107,14 +115,49 @@ def home():
 
     session.clear()
 
-    words = load_words()
-
-    tags = get_tags(words)
-
     return render_template(
-        "home.html",
-        tags=tags
+        "index.html"
     )
+
+# API: return a question for a tag
+@app.route("/api/question/<tag>")
+def api_question(tag):
+    quiz_data = get_question(tag)
+    return jsonify({
+        "question": quiz_data["question"],
+        "sentence": quiz_data["sentence"],
+        "options": quiz_data["options"],
+        "tag": tag
+    })
+
+# API: check answer and get next question
+@app.route("/api/check", methods=["POST"])
+def api_check():
+    data = request.get_json()
+    selected = data.get("selected_answer")
+    correct = data.get("correct_answer")
+    definition = data.get("definition")
+    notes = data.get("notes")
+    tag = data.get("tag")
+    result = "✅ Correct!" if selected == correct else f"❌ Wrong!\nCorrect Answer: {correct}"
+    # fetch next question ensuring it's not the same as the just‑answered one
+    next_data = get_question(tag)
+    attempts = 0
+    while next_data["question"]["word"] == correct and attempts < 10:
+        next_data = get_question(tag)
+        attempts += 1
+    return jsonify({
+        "result": result,
+        "previous_word": correct,
+        "definition": definition,
+        "notes": notes,
+        "next": {
+            "question": next_data["question"],
+            "sentence": next_data["sentence"],
+            "options": next_data["options"],
+            "tag": tag
+        }
+    })
 
 
 # QUIZ PAGE
@@ -192,4 +235,4 @@ def check():
 
 # START SERVER
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=10000)
+    app.run(host="0.0.0.0", port=10000, debug=True)

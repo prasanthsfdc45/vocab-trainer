@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vocabulary Trainer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="hero-section">
+            <h1>🧠 Cognitive Vocabulary Trainer</h1>
+            <p>Train thinking, leadership, analysis, communication and decision‑making vocabulary.</p>
+        </div>
+        <!-- Categories bar -->
+        <div class="category-bar" id="categoryBar"></div>
+        <!-- Quiz and feedback wrapper -->
+        <div class="quiz-container">
+            <div class="quiz-panel" id="quizPanel" style="display:none;">
+                <div class="tag-badge" id="currentTag"></div>
+                <h1 class="sentence" id="sentence"></h1>
+                <form id="answerForm">
+                    <div class="options-container" id="optionsContainer"></div>
+                    <button type="submit" class="submit-btn">Submit Answer</button>
+                </form>
+            </div>
+            <!-- History panel (shows attempted words with result) -->
+            <div class="history-panel" id="historyPanel" style="display:none;">
+                <h2>Attempt History</h2>
+                <div class="history-list" id="historyList"></div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
