@@ -1,10 +1,8 @@
-from flask import Flask, render_template, request, session, jsonify
+from flask import Flask, render_template, request, session, jsonify, redirect, url_for
 import json
 import random
 
 app = Flask(__name__)
-
-# SESSION SECRET
 app.secret_key = "vocab-secret-key"
 
 
@@ -31,13 +29,83 @@ def get_tags(words):
 
     return sorted(list(tags))
 
-# API: return tags as JSON
+
+# GET COMPLETED TAGS FROM SESSION
+def get_completed_tags():
+    return session.get("completed_tags", [])
+
+
+# MARK TAG AS COMPLETED
+def mark_tag_completed(tag):
+
+    completed_tags = get_completed_tags()
+
+    if tag not in completed_tags:
+
+        completed_tags.append(tag)
+
+        session["completed_tags"] = completed_tags
+
+
+# GET NEXT UNCOMPLETED TAG
+def get_next_uncompleted_tag(current_tag=None):
+
+    words = load_words()
+
+    all_tags = get_tags(words)
+
+    completed_tags = get_completed_tags()
+
+    # START FROM FIRST UNCOMPLETED
+    if current_tag is None:
+
+        for tag in all_tags:
+
+            if tag not in completed_tags:
+
+                return tag
+
+        return None
+
+    # FIND CURRENT TAG INDEX
+    try:
+
+        current_index = all_tags.index(current_tag)
+
+    except ValueError:
+
+        current_index = -1
+
+    # LOOK FOR NEXT UNCOMPLETED TAG
+    for i in range(current_index + 1, len(all_tags)):
+
+        tag = all_tags[i]
+
+        if tag not in completed_tags:
+
+            return tag
+
+    # CHECK EARLIER TAGS
+    for i in range(0, current_index + 1):
+
+        tag = all_tags[i]
+
+        if tag not in completed_tags:
+
+            return tag
+
+    return None
+
+
+# API: RETURN TAGS
 @app.route("/api/tags")
 def api_tags():
-    words = load_words()
-    tags = get_tags(words)
-    return jsonify(tags)
 
+    words = load_words()
+
+    tags = get_tags(words)
+
+    return jsonify(tags)
 
 
 # GET QUESTION WITHOUT REPEATING
@@ -45,54 +113,55 @@ def get_question(tag):
 
     words = load_words()
 
-    # FILTER BY TAG
-    filtered_words = []
+    # FILTER WORDS BY TAG
+    filtered_words = [
 
-    for item in words:
+        item for item in words
 
-        if tag in item["tags"]:
+        if tag in item["tags"]
+    ]
 
-            filtered_words.append(item)
+    # SESSION HISTORY
+    attempt_history = session.get("attempt_history", [])
 
-    # SESSION STORAGE
-    asked_words = session.get("asked_words", [])
+    attempted_words = [
 
-    # REMOVE ASKED WORDS
-    remaining_words = []
+        entry["word"]
 
-    for item in filtered_words:
+        for entry in attempt_history
+    ]
 
-        if item["word"] not in asked_words:
+    # REMAINING WORDS
+    remaining_words = [
 
-            remaining_words.append(item)
+        item for item in filtered_words
 
-    # RESET WHEN FINISHED
+        if item["word"] not in attempted_words
+    ]
+
+    # CATEGORY COMPLETED
     if len(remaining_words) == 0:
 
-        asked_words = []
-
-        session["asked_words"] = []
-
-        remaining_words = filtered_words
+        return None
 
     # PICK RANDOM QUESTION
     question = random.choice(remaining_words)
 
-    # STORE QUESTION
-    asked_words.append(question["word"])
-
-    session["asked_words"] = asked_words
-
     # CREATE BLANK SENTENCE
     sentence = question["example"].replace(
+
         question["word"],
+
         "______"
     )
 
     # CREATE OPTIONS
     all_words = [
+
         w["word"]
+
         for w in words
+
         if w["word"] != question["word"]
     ]
 
@@ -103,8 +172,11 @@ def get_question(tag):
     random.shuffle(options)
 
     return {
+
         "question": question,
+
         "sentence": sentence,
+
         "options": options
     }
 
@@ -119,42 +191,170 @@ def home():
         "index.html"
     )
 
-# API: return a question for a tag
+
+# API: GET QUESTION
 @app.route("/api/question/<tag>")
 def api_question(tag):
+
     quiz_data = get_question(tag)
+
+    # CATEGORY FINISHED
+    if quiz_data is None:
+
+        mark_tag_completed(tag)
+
+        next_tag = get_next_uncompleted_tag(tag)
+
+        # RESET FOR NEXT CATEGORY
+        session["attempt_history"] = []
+
+        if next_tag is None:
+
+            return jsonify({
+                "completed": True,
+                "message": "🎉 All categories completed!"
+            })
+
+        quiz_data = get_question(next_tag)
+
+        return jsonify({
+
+            "question": quiz_data["question"],
+
+            "sentence": quiz_data["sentence"],
+
+            "options": quiz_data["options"],
+
+            "tag": next_tag,
+
+            "category_completed": True
+        })
+
     return jsonify({
+
         "question": quiz_data["question"],
+
         "sentence": quiz_data["sentence"],
+
         "options": quiz_data["options"],
+
         "tag": tag
     })
 
-# API: check answer and get next question
+
+# API: CHECK ANSWER
 @app.route("/api/check", methods=["POST"])
 def api_check():
+
     data = request.get_json()
-    selected = data.get("selected_answer")
-    correct = data.get("correct_answer")
+
+    selected_answer = data.get("selected_answer")
+
+    correct_answer = data.get("correct_answer")
+
     definition = data.get("definition")
+
     notes = data.get("notes")
+
     tag = data.get("tag")
-    result = "✅ Correct!" if selected == correct else f"❌ Wrong!\nCorrect Answer: {correct}"
-    # fetch next question ensuring it's not the same as the just‑answered one
+
+    # RESULT
+    result = (
+
+        "✅ Correct!"
+
+        if selected_answer == correct_answer
+
+        else f"❌ Wrong!\nCorrect Answer: {correct_answer}"
+    )
+
+    # SAVE ATTEMPT
+    attempt_history = session.get("attempt_history", [])
+
+    attempt_history.append({
+
+        "word": correct_answer,
+
+        "result": (
+
+            "Correct"
+
+            if selected_answer == correct_answer
+
+            else "Wrong"
+        )
+    })
+
+    session["attempt_history"] = attempt_history
+
+    # NEXT QUESTION
     next_data = get_question(tag)
-    attempts = 0
-    while next_data["question"]["word"] == correct and attempts < 10:
-        next_data = get_question(tag)
-        attempts += 1
+
+    # CATEGORY FINISHED
+    if next_data is None:
+
+        mark_tag_completed(tag)
+
+        next_tag = get_next_uncompleted_tag(tag)
+
+        # RESET HISTORY
+        session["attempt_history"] = []
+
+        # ALL CATEGORIES DONE
+        if next_tag is None:
+
+            return jsonify({
+
+                "completed": True,
+
+                "message": "🎉 All categories completed!"
+            })
+
+        next_data = get_question(next_tag)
+
+        return jsonify({
+
+            "result": result,
+
+            "previous_word": correct_answer,
+
+            "definition": definition,
+
+            "notes": notes,
+
+            "category_completed": True,
+
+            "next": {
+
+                "question": next_data["question"],
+
+                "sentence": next_data["sentence"],
+
+                "options": next_data["options"],
+
+                "tag": next_tag
+            }
+        })
+
+    # NORMAL FLOW
     return jsonify({
+
         "result": result,
-        "previous_word": correct,
+
+        "previous_word": correct_answer,
+
         "definition": definition,
+
         "notes": notes,
+
         "next": {
+
             "question": next_data["question"],
+
             "sentence": next_data["sentence"],
+
             "options": next_data["options"],
+
             "tag": tag
         }
     })
@@ -166,15 +366,48 @@ def quiz(tag):
 
     quiz_data = get_question(tag)
 
+    # CATEGORY COMPLETED
+    if quiz_data is None:
+
+        mark_tag_completed(tag)
+
+        next_tag = get_next_uncompleted_tag(tag)
+
+        # RESET HISTORY
+        session["attempt_history"] = []
+
+        # ALL TAGS COMPLETED
+        if next_tag is None:
+
+            return render_template(
+                "completed.html"
+            )
+
+        return redirect(
+            url_for(
+                "quiz",
+                tag=next_tag
+            )
+        )
+
     return render_template(
+
         "quiz.html",
+
         question=quiz_data["question"],
+
         sentence=quiz_data["sentence"],
+
         options=quiz_data["options"],
+
         tag=tag,
+
         result=None,
+
         previous_word=None,
+
         definition=None,
+
         notes=None
     )
 
@@ -205,34 +438,79 @@ def check():
         Correct Answer: <b>{correct_answer}</b>
         """
 
-    # GET NEW QUESTION
+    # SAVE ATTEMPT
+    attempt_history = session.get("attempt_history", [])
+
+    attempt_history.append({
+
+        "word": correct_answer,
+
+        "result": (
+
+            "Correct"
+
+            if selected_answer == correct_answer
+
+            else "Wrong"
+        )
+    })
+
+    session["attempt_history"] = attempt_history
+
+    # NEXT QUESTION
     quiz_data = get_question(tag)
 
-    # ENSURE DIFFERENT QUESTION
-    attempts = 0
+    # CATEGORY COMPLETED
+    if quiz_data is None:
 
-    while (
-        quiz_data["question"]["word"] == correct_answer
-        and attempts < 10
-    ):
+        mark_tag_completed(tag)
 
-        quiz_data = get_question(tag)
+        next_tag = get_next_uncompleted_tag(tag)
 
-        attempts += 1
+        # RESET HISTORY
+        session["attempt_history"] = []
+
+        # ALL TAGS COMPLETED
+        if next_tag is None:
+
+            return render_template(
+                "completed.html"
+            )
+
+        return redirect(
+            url_for(
+                "quiz",
+                tag=next_tag
+            )
+        )
 
     return render_template(
+
         "quiz.html",
+
         question=quiz_data["question"],
+
         sentence=quiz_data["sentence"],
+
         options=quiz_data["options"],
+
         tag=tag,
+
         result=result,
+
         previous_word=correct_answer,
+
         definition=definition,
+
         notes=notes
     )
 
 
 # START SERVER
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=10000, debug=True)
+
+    app.run(
+        host="0.0.0.0",
+        port=10000,
+        debug=True
+    )
