@@ -121,14 +121,16 @@ def get_question(tag):
         if tag in item["tags"]
     ]
 
-    # SESSION HISTORY
-    attempt_history = session.get("attempt_history", [])
+    # SESSION HISTORY — use full_history to track attempted words across categories
+    full_history = session.get("full_history", [])
 
     attempted_words = [
 
         entry["word"]
 
-        for entry in attempt_history
+        for entry in full_history
+
+        if entry.get("tag") == tag
     ]
 
     # REMAINING WORDS
@@ -181,6 +183,25 @@ def get_question(tag):
     }
 
 
+# SAVE ATTEMPT TO FULL PERSISTENT HISTORY
+def save_attempt(word, selected_answer, correct_answer, tag):
+
+    full_history = session.get("full_history", [])
+
+    full_history.append({
+
+        "word": correct_answer,
+
+        "selected": selected_answer,
+
+        "result": "Correct" if selected_answer == correct_answer else "Wrong",
+
+        "tag": tag
+    })
+
+    session["full_history"] = full_history
+
+
 # HOME PAGE
 @app.route("/")
 def home():
@@ -205,9 +226,6 @@ def api_question(tag):
 
         next_tag = get_next_uncompleted_tag(tag)
 
-        # RESET FOR NEXT CATEGORY
-        session["attempt_history"] = []
-
         if next_tag is None:
 
             return jsonify({
@@ -227,7 +245,9 @@ def api_question(tag):
 
             "tag": next_tag,
 
-            "category_completed": True
+            "category_completed": True,
+
+            "full_history": session.get("full_history", [])
         })
 
     return jsonify({
@@ -238,7 +258,9 @@ def api_question(tag):
 
         "options": quiz_data["options"],
 
-        "tag": tag
+        "tag": tag,
+
+        "full_history": session.get("full_history", [])
     })
 
 
@@ -268,24 +290,8 @@ def api_check():
         else f"❌ Wrong!\nCorrect Answer: {correct_answer}"
     )
 
-    # SAVE ATTEMPT
-    attempt_history = session.get("attempt_history", [])
-
-    attempt_history.append({
-
-        "word": correct_answer,
-
-        "result": (
-
-            "Correct"
-
-            if selected_answer == correct_answer
-
-            else "Wrong"
-        )
-    })
-
-    session["attempt_history"] = attempt_history
+    # SAVE ATTEMPT TO FULL PERSISTENT HISTORY
+    save_attempt(correct_answer, selected_answer, correct_answer, tag)
 
     # NEXT QUESTION
     next_data = get_question(tag)
@@ -297,9 +303,6 @@ def api_check():
 
         next_tag = get_next_uncompleted_tag(tag)
 
-        # RESET HISTORY
-        session["attempt_history"] = []
-
         # ALL CATEGORIES DONE
         if next_tag is None:
 
@@ -307,7 +310,9 @@ def api_check():
 
                 "completed": True,
 
-                "message": "🎉 All categories completed!"
+                "message": "🎉 All categories completed!",
+
+                "full_history": session.get("full_history", [])
             })
 
         next_data = get_question(next_tag)
@@ -323,6 +328,8 @@ def api_check():
             "notes": notes,
 
             "category_completed": True,
+
+            "full_history": session.get("full_history", []),
 
             "next": {
 
@@ -346,6 +353,8 @@ def api_check():
         "definition": definition,
 
         "notes": notes,
+
+        "full_history": session.get("full_history", []),
 
         "next": {
 
@@ -373,14 +382,12 @@ def quiz(tag):
 
         next_tag = get_next_uncompleted_tag(tag)
 
-        # RESET HISTORY
-        session["attempt_history"] = []
-
         # ALL TAGS COMPLETED
         if next_tag is None:
 
             return render_template(
-                "completed.html"
+                "completed.html",
+                full_history=session.get("full_history", [])
             )
 
         return redirect(
@@ -408,7 +415,9 @@ def quiz(tag):
 
         definition=None,
 
-        notes=None
+        notes=None,
+
+        full_history=session.get("full_history", [])
     )
 
 
@@ -438,24 +447,8 @@ def check():
         Correct Answer: <b>{correct_answer}</b>
         """
 
-    # SAVE ATTEMPT
-    attempt_history = session.get("attempt_history", [])
-
-    attempt_history.append({
-
-        "word": correct_answer,
-
-        "result": (
-
-            "Correct"
-
-            if selected_answer == correct_answer
-
-            else "Wrong"
-        )
-    })
-
-    session["attempt_history"] = attempt_history
+    # SAVE ATTEMPT TO FULL PERSISTENT HISTORY
+    save_attempt(correct_answer, selected_answer, correct_answer, tag)
 
     # NEXT QUESTION
     quiz_data = get_question(tag)
@@ -467,14 +460,12 @@ def check():
 
         next_tag = get_next_uncompleted_tag(tag)
 
-        # RESET HISTORY
-        session["attempt_history"] = []
-
         # ALL TAGS COMPLETED
         if next_tag is None:
 
             return render_template(
-                "completed.html"
+                "completed.html",
+                full_history=session.get("full_history", [])
             )
 
         return redirect(
@@ -502,7 +493,9 @@ def check():
 
         definition=definition,
 
-        notes=notes
+        notes=notes,
+
+        full_history=session.get("full_history", [])
     )
 
 
