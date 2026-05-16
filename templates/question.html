@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ dataset.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="hero-section">
+            <h1>{{ dataset.icon }} {{ dataset.name }}</h1>
+            <p>{{ dataset.description }}</p>
+        </div>
+
+        <!-- DATASET BAR -->
+
+        <div class="category-bar">
+
+            {% for item in datasets %}
+
+            <a
+                class="category-btn {% if item.id == dataset_id %}active-category{% endif %}"
+                href="/quiz/{{ item.id }}/{{ tag }}"
+            >
+                {{ item.icon }} {{ item.name }}
+            </a>
+
+            {% endfor %}
+
+        </div>
+
+        <!-- CATEGORY BAR -->
+
+        <div class="category-bar">
+
+            {% for item_tag in tags %}
+
+            <a
+                class="category-btn {% if item_tag == tag %}active-category{% endif %}"
+                href="/quiz/{{ dataset_id }}/{{ item_tag }}"
+            >
+                {{ item_tag }}
+            </a>
+
+            {% endfor %}
+
+        </div>
+
+        <!-- QUIZ LAYOUT -->
+
+        <div class="quiz-container">
+
+            <!-- QUIZ PANEL -->
+
+            <div class="quiz-panel">
+
+                <div class="tag-badge">
+                    {{ tag }}
+                </div>
+
+                <h1 class="sentence">
+                    {{ sentence }}
+                </h1>
+
+                {% if result %}
+
+                <div class="result-box">
+                    {{ result|safe }}
+                </div>
+
+                {% endif %}
+
+                <form method="POST" action="/check">
+
+                    <div class="options-container">
+
+                        {% for option in options %}
+
+                        <label class="option-card">
+
+                            <input
+                                type="radio"
+                                name="selected_answer"
+                                value="{{ option }}"
+                                required
+                            >
+
+                            <span>{{ option }}</span>
+
+                        </label>
+
+                        {% endfor %}
+
+                    </div>
+
+                    <input
+                        type="hidden"
+                        name="dataset_id"
+                        value="{{ dataset_id }}"
+                    >
+
+                    <input
+                        type="hidden"
+                        name="tag"
+                        value="{{ tag }}"
+                    >
+
+                    <input
+                        type="hidden"
+                        name="correct_answer"
+                        value="{{ question.word }}"
+                    >
+
+                    <input
+                        type="hidden"
+                        name="definition"
+                        value="{{ question.definition }}"
+                    >
+
+                    <input
+                        type="hidden"
+                        name="example"
+                        value="{{ question.example }}"
+                    >
+                    <input
+                        type="hidden"
+                        name="synonyms"
+                        value="{{ question.synonyms }}"
+                    >
+
+                    <button type="submit" class="submit-btn">
+                        Submit Answer
+                    </button>
+
+                </form>
+
+            </div>
+
+            <!-- HISTORY PANEL -->
+
+            <div class="history-panel">
+
+                <h2>Attempt History</h2>
+
+                <div class="history-list">
+
+                    {% for item in full_history %}
+
+                    <div class="history-item">
+
+                        <strong>{{ item.result }}</strong>
+                        <br>
+                        {{ item.definition }}
+                        <br>
+
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

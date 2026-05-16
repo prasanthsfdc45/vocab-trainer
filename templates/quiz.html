@@ -90,56 +90,7 @@
         </div>
 
 
-        <!-- RIGHT SIDE -->
-        <div class="feedback-panel">
-
-            <h2>Previous Result</h2>
-
-            {% if result %}
-
-                <div class="result-box">
-
-                    <h3>{{ result|safe }}</h3>
-
-                    <div class="info-block">
-                        <div class="label">Word</div>
-                        <div class="value">{{ previous_word }}</div>
-                    </div>
-
-                    <div class="info-block">
-                        <div class="label">Definition</div>
-                        <div class="value">{{ definition }}</div>
-                    </div>
-
-                    <div class="info-block">
-                        <div class="label">Usage Notes</div>
-                        <div class="value">{{ notes }}</div>
-                    </div>
-
-                </div>
-
-            {% else %}
-
-                <div class="empty-state">
-                    Submit an answer to see feedback and explanations.
-                </div>
-
-            {% endif %}
-
-            <!-- Attempt History -->
-            <div class="history-section">
-                <h2>Attempt History</h2>
-                <ul class="history-list">
-                    {% for attempt in attempt_history %}
-                    <li class="history-item {{ attempt.result|lower }}">
-                        {{ attempt.word }} - {{ attempt.result }}
-                    </li>
-                    {% endfor %}
-                </ul>
-                {% if attempt_history|length == 0 %}
-                <p class="empty-history">No attempts yet.</p>
-                {% endif %}
-            </div>
+       
 
         </div>
 

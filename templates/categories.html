@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ dataset.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="top-nav">
+        <a href="/" class="back-btn">
+            ← Back to Datasets
+        </a>
+    </div>
+
+    <div class="container">
+        <div class="hero-section">
+            <h1>{{ dataset.icon }} {{ dataset.name }}</h1>
+            <p>{{ dataset.description }}</p>
+        </div>
+
+        <div class="category-bar">
+            {% for tag in tags %}
+            <a class="category-btn" href="/question/{{ dataset_id }}/{{ tag }}">
+                <h2>{{ tag }}</h2>
+                <p>Practice contextual vocabulary</p>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
