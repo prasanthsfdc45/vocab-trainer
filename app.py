@@ -74,7 +74,8 @@ def get_question(dataset_id, tag):
         item for item in filtered_words
         if item["word"] not in attempted_words
     ]
-
+    total_questions = len(filtered_words)
+    completed_questions = len(attempted_words)
     if len(remaining_words) == 0:
         return None
 
@@ -110,7 +111,9 @@ def get_question(dataset_id, tag):
     return {
         "question": question,
         "sentence": sentence,
-        "options": options
+        "options": options,
+        "completed_questions":completed_questions,
+        "total_questions":total_questions
     }
 
 def get_completed_tags(dataset_id):
@@ -256,7 +259,9 @@ def api_question(dataset_id, tag):
         "question": quiz_data["question"],
         "sentence": quiz_data["sentence"],
         "options": quiz_data["options"],
-        "tag": tag
+        "tag": tag,
+        "completed_questions":quiz_data["completed_questions"],
+        "total_questions":quiz_data["total_questions"]
     })
 
 @app.route("/api/check", methods=["POST"])
@@ -266,13 +271,13 @@ def api_check():
     correct_answer = data.get("correct_answer")
     definition = data.get("definition")
     tag = data.get("tag")
-    synonyms = data.get("synonyms")
+    synonyms = data.get("synonyms").upper()
     dataset_id = data.get("dataset_id")
 
     result = (
-        f"✅ Correct!   {correct_answer}"
+        f"✅ Correct!   {correct_answer.upper()}"
         if selected_answer == correct_answer
-        else f"❌ {selected_answer} - {correct_answer}"
+        else f"❌ {selected_answer} - {correct_answer.upper()}"
     )
 
     full_history = session.get(
@@ -283,7 +288,7 @@ def api_check():
     full_history.append({
         "word": correct_answer,
         "definition": definition,
-        "synonyms": synonyms,
+        "synonyms": synonyms.upper(),
         "result": result,
         "tag": tag,
         "dataset": dataset_id
@@ -330,7 +335,9 @@ def api_check():
                 "question": next_data["question"],
                 "sentence": next_data["sentence"],
                 "options": next_data["options"],
-                "tag": next_tag
+                "tag": next_tag,
+                 "completed_questions": next_data["completed_questions"],
+                 "total_questions": next_data["total_questions"]
             }
         })
 
@@ -342,7 +349,9 @@ def api_check():
             "question": next_data["question"],
             "sentence": next_data["sentence"],
             "options": next_data["options"],
-            "tag": tag
+            "tag": tag,
+            "completed_questions":next_data["completed_questions"],
+            "total_questions": next_data["total_questions"]
         }
     })
 if __name__ == "__main__":

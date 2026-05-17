@@ -106,6 +106,26 @@ function renderQuiz(data) {
   document.getElementById(
       "currentTag"
   ).textContent = data.tag;
+  const completed =
+    data.completed_questions;
+
+    const total =
+        data.total_questions;
+
+    const percent =
+        Math.round(
+            (completed / total) * 100
+        );
+
+    document.getElementById(
+        "progressText"
+    ).textContent =
+        `${completed} / ${total} completed`;
+
+    document.getElementById(
+        "progressFill"
+    ).style.width =
+        `${percent}%`;
 
   document.getElementById(
       "sentence"
