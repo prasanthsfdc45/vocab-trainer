@@ -1,63 +1,82 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vocabulary Trainer</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="container">
+
         <div class="hero-section">
             <h1>🧠 Cognitive Vocabulary Trainer</h1>
             <p>Train thinking, leadership, analysis, communication and decision-making vocabulary.</p>
         </div>
+
+        <!-- Error box (injected by JS when needed) -->
+        <div id="errorBox" class="error-box" style="display:none;"></div>
+
+        <!-- Dataset selector -->
         <div class="category-bar" id="datasetBar"></div>
+
+        <!-- Tag/category selector (populated after dataset pick) -->
         <div class="category-bar" id="categoryBar"></div>
 
         <div class="quiz-container">
 
+            <!-- Quiz panel -->
             <div class="quiz-panel" id="quizPanel" style="display:none;">
-                <div class="tag-badge" id="currentTag"></div>
-                <div class="progress-wrapper">
-                    <div class="progress-text" id="progressText">
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="progressFill">
 
-                        </div>
+                <!-- Category banner (shows on tag switch) -->
+                <div id="categoryBanner" class="category-banner" style="display:none;"></div>
+
+                <div class="tag-badge" id="currentTag"></div>
+
+                <!-- Progress -->
+                <div class="progress-wrapper">
+                    <div class="progress-text" id="progressText"></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill" style="width:0%"></div>
                     </div>
+                </div><!-- /.progress-wrapper -->
+
                 <h1 class="sentence" id="sentence"></h1>
 
-                <form id="answerForm">
+                <form id="answerForm" autocomplete="off">
                     <div class="quiz-split-layout">
-                        <div class="quiz-left">
-                            <div
-                                class="options-container"
-                                id="optionsContainer">
-                            </div>
-                        </div>
-                        <div class="quiz-right" id="answerDetailsPanel">
-                            <strong><div id="correctWord"></div></strong>
-                            <br><br><div id="definition"></div>
-                            <br><br><div id="synonyms"></div>
-                        </div>
-                    </div>
 
-                    <button type="submit" class="submit-btn">
-                        Submit Answer
-                    </button>
+                        <!-- Left: answer options -->
+                        <div class="quiz-left">
+                            <div class="options-container" id="optionsContainer"></div>
+                        </div>
+
+                        <!-- Right: feedback panel (result + definition + synonyms) -->
+                        <div class="quiz-right" id="answerDetailsPanel">
+                            <div id="correctWord" class="feedback-result"></div>
+                            <div id="definition" class="feedback-definition"></div>
+                            <div id="synonyms" class="feedback-synonyms"></div>
+                        </div>
+
+                    </div><!-- /.quiz-split-layout -->
+
+                    <button type="submit" class="submit-btn">Submit Answer</button>
+
                 </form>
 
-            </div>
+            </div><!-- /#quizPanel -->
 
+            <!-- History panel -->
             <div class="history-panel" id="historyPanel" style="display:none;">
                 <h2>Attempt History</h2>
                 <div class="history-list" id="historyList"></div>
             </div>
 
-        </div>
-    </div>
+        </div><!-- /.quiz-container -->
+
+    </div><!-- /.container -->
 
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
-
 </body>
 </html>

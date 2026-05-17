@@ -1,304 +1,346 @@
+// ─── State (all owned by client — server is stateless) ────────────────────────
+let currentDataset  = null;
+let currentTag      = null;
+let attemptedWords  = [];   // words answered in the CURRENT tag session
+let history         = [];   // full display history across all tags
+let isSubmitting    = false;
+
+// ─── Helpers ──────────────────────────────────────────────────────────────────
+
 function el(tag, className, html) {
-  const e = document.createElement(tag);
-
-  if (className) {
-      e.className = className;
-  }
-
-  if (html) {
-      e.innerHTML = html;
-  }
-
-  return e;
+    const e = document.createElement(tag);
+    if (className)       e.className = className;
+    if (html !== undefined) e.innerHTML = html;
+    return e;
 }
 
-let currentDataset = null;
+function setSubmitEnabled(enabled) {
+    const btn = document.querySelector(".submit-btn:not(.restart-btn)");
+    if (!btn) return;
+    btn.disabled    = !enabled;
+    btn.style.opacity = enabled ? "1" : "0.5";
+}
 
-let currentTag = null;
+function showError(msg) {
+    const box = document.getElementById("errorBox");
+    box.textContent  = msg;
+    box.style.display = "block";
+    setTimeout(() => { box.style.display = "none"; }, 4000);
+}
 
-let history = [];
+function showBanner(msg) {
+    const b = document.getElementById("categoryBanner");
+    b.textContent   = msg;
+    b.style.display = "block";
+    setTimeout(() => { b.style.display = "none"; }, 3000);
+}
+
+function clearFeedback() {
+    document.getElementById("correctWord").textContent = "";
+    document.getElementById("definition").textContent  = "";
+    document.getElementById("synonyms").textContent    = "";
+}
+
+// ─── Dataset / tag loading ────────────────────────────────────────────────────
 
 async function loadDatasets() {
+    try {
+        const resp     = await fetch("/api/datasets");
+        if (!resp.ok)  throw new Error();
+        const datasets = await resp.json();
+        const bar      = document.getElementById("datasetBar");
+        bar.innerHTML  = "";
 
-  const resp = await fetch("/api/datasets");
-
-  const datasets = await resp.json();
-
-  const bar = document.getElementById("datasetBar");
-
-  bar.innerHTML = "";
-
-  datasets.forEach(dataset => {
-
-      const btn = el(
-          "button",
-          "category-btn",
-          `${dataset.icon} ${dataset.name}`
-      );
-
-      btn.addEventListener("click", () => {
-
-          currentDataset = dataset.id;
-
-          loadTags(dataset.id);
-      });
-
-      bar.appendChild(btn);
-  });
+        datasets.forEach(ds => {
+            const btn = el("button", "category-btn", `${ds.icon} ${ds.name}`);
+            btn.addEventListener("click", () => {
+                document.querySelectorAll("#datasetBar .category-btn")
+                    .forEach(b => b.classList.remove("active"));
+                btn.classList.add("active");
+                currentDataset = ds.id;
+                currentTag     = null;
+                loadTags(ds.id);
+            });
+            bar.appendChild(btn);
+        });
+    } catch {
+        showError("Could not load datasets. Please refresh.");
+    }
 }
 
 async function loadTags(datasetId) {
+    try {
+        const resp  = await fetch(`/api/tags/${datasetId}`);
+        if (!resp.ok) throw new Error();
+        const tags  = await resp.json();
+        const bar   = document.getElementById("categoryBar");
+        bar.innerHTML = "";
 
-  const resp = await fetch(
-      `/api/tags/${datasetId}`
-  );
+        document.getElementById("quizPanel").style.display    = "none";
+        document.getElementById("historyPanel").style.display = "none";
 
-  const tags = await resp.json();
-
-  const bar = document.getElementById("categoryBar");
-
-  bar.innerHTML = "";
-
-  tags.forEach(tag => {
-
-      const btn = el(
-          "button",
-          "category-btn",
-          tag
-      );
-
-      btn.addEventListener("click", () => {
-          startQuiz(tag);
-      });
-
-      bar.appendChild(btn);
-  });
+        tags.forEach(tag => {
+            const btn = el("button", "category-btn", tag);
+            btn.addEventListener("click", () => {
+                document.querySelectorAll("#categoryBar .category-btn")
+                    .forEach(b => b.classList.remove("active"));
+                btn.classList.add("active");
+                startQuiz(tag);
+            });
+            bar.appendChild(btn);
+        });
+    } catch {
+        showError("Could not load categories.");
+    }
 }
+
+// ─── Quiz flow ────────────────────────────────────────────────────────────────
 
 async function startQuiz(tag) {
+    currentTag     = tag;
+    attemptedWords = [];        // fresh list — tag click always starts at 0
+    isSubmitting   = false;
+    clearFeedback();
+    document.getElementById("historyPanel").style.display = "none";
+    document.getElementById("categoryBanner").style.display = "none";
 
-  currentTag = tag;
-
-  document.getElementById(
-      "historyPanel"
-  ).style.display = "none";
-
-  await loadQuestion(tag);
+    await loadFirstQuestion(tag);
 }
 
-async function loadQuestion(tag) {
+async function loadFirstQuestion(tag) {
+    try {
+        const resp = await fetch("/api/question", {
+            method:  "POST",
+            headers: { "Content-Type": "application/json" },
+            body:    JSON.stringify({
+                dataset_id: currentDataset,
+                tag:        tag,
+                attempted:  attemptedWords   // [] on first load
+            })
+        });
+        if (!resp.ok) throw new Error();
+        const data = await resp.json();
 
-  const resp = await fetch(
-      `/api/question/${currentDataset}/${encodeURIComponent(tag)}`
-  );
-
-  const data = await resp.json();
-
-  renderQuiz(data);
+        if (data.completed) {
+            showCategoryComplete(tag);
+            return;
+        }
+        renderQuiz(data);
+    } catch {
+        showError("Could not load question. Please try again.");
+    }
 }
+
+// ─── Render ───────────────────────────────────────────────────────────────────
 
 function renderQuiz(data) {
+    if (!data) return;
 
-  document.getElementById(
-      "quizPanel"
-  ).style.display = "block";
+    document.getElementById("quizPanel").style.display = "block";
+    document.getElementById("currentTag").textContent  = data.tag || currentTag;
 
-  document.getElementById(
-      "currentTag"
-  ).textContent = data.tag;
-  const completed =
-    data.completed_questions;
+    // Progress
+    const completed = data.completed_questions ?? 0;
+    const total     = data.total_questions     ?? 1;
+    const pct       = total > 0 ? Math.round((completed / total) * 100) : 0;
+    document.getElementById("progressText").textContent   = `${completed} / ${total} completed`;
+    document.getElementById("progressFill").style.width   = `${pct}%`;
 
-    const total =
-        data.total_questions;
+    // Sentence
+    document.getElementById("sentence").textContent = data.sentence;
 
-    const percent =
-        Math.round(
-            (completed / total) * 100
-        );
+    // Options
+    const opts    = document.getElementById("optionsContainer");
+    opts.innerHTML = "";
+    data.options.forEach(opt => {
+        const label = el("label", "option-card");
+        const input = el("input");
+        input.type  = "radio";
+        input.name  = "selected_answer";
+        input.value = opt;
+        input.addEventListener("change", () => {
+            document.querySelectorAll(".option-card")
+                .forEach(c => c.classList.remove("selected"));
+            label.classList.add("selected");
+        });
+        label.appendChild(input);
+        label.appendChild(el("span", null, opt));
+        opts.appendChild(label);
+    });
 
-    document.getElementById(
-        "progressText"
-    ).textContent =
-        `${completed} / ${total} completed`;
+    // Store question metadata on the form
+    const form            = document.getElementById("answerForm");
+    form.dataset.definition = data.question.definition || "";
+    form.dataset.notes      = data.question.notes      || "";
+    form.dataset.synonyms   = (data.question.synonyms  || []).join(", ");
+    form.dataset.correct    = data.question.word;
+    form.dataset.tag        = data.tag || currentTag;
 
-    document.getElementById(
-        "progressFill"
-    ).style.width =
-        `${percent}%`;
-
-  document.getElementById(
-      "sentence"
-  ).textContent = data.sentence;
-
-  const opts = document.getElementById(
-      "optionsContainer"
-  );
-
-  opts.innerHTML = "";
-
-  data.options.forEach(opt => {
-
-      const label = el(
-          "label",
-          "option-card"
-      );
-
-      const input = el("input");
-
-      input.type = "radio";
-
-      input.name = "selected_answer";
-
-      input.value = opt;
-
-      input.required = true;
-
-      const span = el(
-          "span",
-          null,
-          opt
-      );
-
-      label.appendChild(input);
-
-      label.appendChild(span);
-
-      opts.appendChild(label);
-  });
-
-  const form = document.getElementById(
-      "answerForm"
-  );
-
-  form.dataset.definition =
-      data.question.definition || "";
-
-  form.dataset.notes =
-      data.question.notes || "";
-  form.dataset.synonyms =
-      (data.question.synonyms || []).join(", ");
-  form.dataset.correct =
-      data.question.word;
-
-  form.dataset.tag =
-      data.tag;
+    setSubmitEnabled(true);
 }
+
+// ─── Submit ───────────────────────────────────────────────────────────────────
 
 async function submitAnswer(event) {
+    event.preventDefault();
+    if (isSubmitting) return;
 
-  event.preventDefault();
+    const form          = event.target;
+    const selectedInput = form.elements["selected_answer"];
+    if (!selectedInput?.value) { showError("Please select an answer."); return; }
 
-  const form = event.target;
+    const selected     = selectedInput.value;
+    const correctWord  = form.dataset.correct;
 
-  const selected =
-      form.elements["selected_answer"].value;
+    isSubmitting = true;
+    setSubmitEnabled(false);
+    highlightOption(selected, correctWord);
 
-  const payload = {
+    // Add to attempted BEFORE sending so server gets the updated list
+    if (!attemptedWords.includes(correctWord)) {
+        attemptedWords.push(correctWord);
+    }
 
-      dataset_id: currentDataset,
+    const payload = {
+        dataset_id:      currentDataset,
+        tag:             form.dataset.tag,
+        selected_answer: selected,
+        correct_answer:  correctWord,
+        definition:      form.dataset.definition,
+        notes:           form.dataset.notes,
+        synonyms:        form.dataset.synonyms,
+        attempted:       [...attemptedWords],   // full list including just-answered word
+    };
 
-      selected_answer: selected,
+    try {
+        const resp = await fetch("/api/check", {
+            method:  "POST",
+            headers: { "Content-Type": "application/json" },
+            body:    JSON.stringify(payload)
+        });
+        if (!resp.ok) throw new Error();
+        const result = await resp.json();
 
-      correct_answer: form.dataset.correct,
+        if (result.completed) {
+            showFeedback(result);
+            showAllComplete(result.message);
+            return;
+        }
 
-      definition: form.dataset.definition,
+        if (result.category_completed) {
+            // Moving to a new tag — reset attempted list
+            attemptedWords = [];
+            currentTag     = result.next.tag;
+            showBanner(`✅ Category done! Moving to: ${result.next.tag}`);
+        }
 
-      notes: form.dataset.notes,
+        // Render next question FIRST, then paint feedback so right panel is never overwritten
+        renderQuiz(result.next);
+        showFeedback(result);
+        isSubmitting = false;
 
-      tag: form.dataset.tag,
-      synonyms: form.dataset.synonyms
-  };
-
-  const resp = await fetch(
-      "/api/check",
-      {
-          method: "POST",
-
-          headers: {
-              "Content-Type": "application/json"
-          },
-
-          body: JSON.stringify(payload)
-      }
-  );
-
-  const result = await resp.json();
-  result["synonyms"] = form.dataset.synonyms;
-  showFeedback(result);
-
-  renderQuiz(result.next);
+    } catch {
+        showError("Could not submit. Please try again.");
+        // Roll back the attempted word we optimistically added
+        attemptedWords = attemptedWords.filter(w => w !== correctWord);
+        setSubmitEnabled(true);
+        isSubmitting = false;
+    }
 }
 
-function renderHistory() {
-
-  const list = document.getElementById(
-      "historyList"
-  );
-
-  list.innerHTML = "";
-
-  for (
-      let i = history.length - 1;
-      i >= 0;
-      i--
-  ) {
-
-      const item = history[i];
-
-      const div = document.createElement("div");
-
-      div.className = "history-item";
-
-      div.innerHTML = `
-          <strong>${item.word}</strong>
-          – ${item.result}
-          <br><br>
-          ${item.definition}
-          <br><br>
-          <strong>Synonyms: ${item.synonyms}</strong>
-      `;
-
-      list.appendChild(div);
-  }
-}
+// ─── Feedback ─────────────────────────────────────────────────────────────────
 
 function showFeedback(data) {
+    history.push({
+        word:       data.previous_word,
+        definition: data.definition,
+        notes:      data.notes     || "",
+        result:     data.result,
+        synonyms:   data.synonyms  || ""
+    });
+    renderHistory();
 
-  history.push({
-
-      word: data.previous_word,
-
-      definition: data.definition,
-
-      notes: data.notes,
-
-      result: data.result,
-      
-      synonyms : data.synonyms
-  });
-
-  renderHistory();
-    document.getElementById(
-        "correctWord"
-    ).textContent = data.result;
-    document.getElementById(
-        "definition"
-    ).textContent = data.definition;
-    document.getElementById(
-        "synonyms"
-    ).textContent = data.synonyms || "";
-
-  document.getElementById(
-      "historyPanel"
-  ).style.display = "block";
+    document.getElementById("correctWord").textContent = data.result       || "";
+    document.getElementById("definition").textContent  = data.definition   || "";
+    document.getElementById("synonyms").textContent    = data.synonyms     || "";
+    document.getElementById("historyPanel").style.display = "block";
 }
 
-document
-  .getElementById("answerForm")
-  .addEventListener(
-      "submit",
-      submitAnswer
-  );
+function highlightOption(selected, correct) {
+    document.querySelectorAll(".option-card").forEach(label => {
+        const input = label.querySelector("input");
+        if (!input) return;
+        if (input.value === correct)                        label.classList.add("correct");
+        else if (input.value === selected && selected !== correct) label.classList.add("wrong");
+        input.disabled = true;
+    });
+}
 
+function showCategoryComplete(tag) {
+    document.getElementById("quizPanel").style.display  = "block";
+    document.getElementById("sentence").textContent     = `✅ All words in "${tag}" completed!`;
+    document.getElementById("optionsContainer").innerHTML = "";
+    setSubmitEnabled(false);
+}
+
+function showAllComplete(message) {
+    document.getElementById("quizPanel").style.display  = "block";
+    document.getElementById("sentence").textContent     = message || "🎉 All categories completed!";
+    document.getElementById("optionsContainer").innerHTML = "";
+    clearFeedback();
+    setSubmitEnabled(false);
+
+    let btn = document.getElementById("restartBtn");
+    if (!btn) {
+        btn            = el("button", "submit-btn restart-btn", "🔄 Start Over");
+        btn.id         = "restartBtn";
+        btn.type       = "button";
+        btn.addEventListener("click", restartQuiz);
+        document.getElementById("answerForm").appendChild(btn);
+    }
+    btn.style.display = "inline-block";
+}
+
+// ─── History ──────────────────────────────────────────────────────────────────
+
+function renderHistory() {
+    const list     = document.getElementById("historyList");
+    list.innerHTML = "";
+    for (let i = history.length - 1; i >= 0; i--) {
+        const item      = history[i];
+        const isCorrect = item.result.startsWith("✅");
+        const div       = document.createElement("div");
+        div.className   = `history-item ${isCorrect ? "history-correct" : "history-wrong"}`;
+        div.innerHTML   = `
+            <strong>${item.word}</strong> — ${item.result}
+            <br><br>${item.definition}
+            ${item.synonyms ? `<br><br><strong>Synonyms:</strong> ${item.synonyms}` : ""}
+            ${item.notes    ? `<br><em>${item.notes}</em>`                          : ""}
+        `;
+        list.appendChild(div);
+    }
+}
+
+// ─── Restart ──────────────────────────────────────────────────────────────────
+
+function restartQuiz() {
+    attemptedWords = [];
+    history        = [];
+    currentTag     = null;
+    currentDataset = null;
+    isSubmitting   = false;
+
+    document.getElementById("quizPanel").style.display    = "none";
+    document.getElementById("historyPanel").style.display = "none";
+    document.getElementById("categoryBar").innerHTML      = "";
+    document.querySelectorAll("#datasetBar .category-btn")
+        .forEach(b => b.classList.remove("active"));
+
+    const restartBtn = document.getElementById("restartBtn");
+    if (restartBtn) restartBtn.style.display = "none";
+}
+
+// ─── Init ─────────────────────────────────────────────────────────────────────
+
+document.getElementById("answerForm").addEventListener("submit", submitAnswer);
 loadDatasets();
