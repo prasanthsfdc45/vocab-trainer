@@ -20,7 +20,19 @@
                 <h1 class="sentence" id="sentence"></h1>
 
                 <form id="answerForm">
-                    <div class="options-container" id="optionsContainer"></div>
+                    <div class="quiz-split-layout">
+                        <div class="quiz-left">
+                            <div
+                                class="options-container"
+                                id="optionsContainer">
+                            </div>
+                        </div>
+                        <div class="quiz-right" id="answerDetailsPanel">
+                            <strong><div id="correctWord"></div></strong>
+                            <br><br><div id="definition"></div>
+                            <br><br><div id="synonyms"></div>
+                        </div>
+                    </div>
 
                     <button type="submit" class="submit-btn">
                         Submit Answer

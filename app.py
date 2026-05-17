@@ -113,6 +113,100 @@ def get_question(dataset_id, tag):
         "options": options
     }
 
+def get_completed_tags(dataset_id):
+    completed = session.get(
+        "completed_tags",
+        {}
+    )
+
+    return completed.get(
+        dataset_id,
+        []
+    )
+
+
+def mark_tag_completed(dataset_id, tag):
+
+    completed = session.get(
+        "completed_tags",
+        {}
+    )
+
+    dataset_completed = completed.get(
+        dataset_id,
+        []
+    )
+
+    if tag not in dataset_completed:
+        dataset_completed.append(tag)
+
+    completed[dataset_id] = (
+        dataset_completed
+    )
+
+    session["completed_tags"] = (
+        completed
+    )
+
+
+def get_next_uncompleted_tag(
+    dataset_id,
+    current_tag=None
+):
+
+    words = load_words(
+        dataset_id
+    )
+
+    all_tags = get_tags(words)
+
+    completed_tags = (
+        get_completed_tags(
+            dataset_id
+        )
+    )
+
+    if current_tag is None:
+
+        for tag in all_tags:
+
+            if tag not in completed_tags:
+                return tag
+
+        return None
+
+    try:
+
+        current_index = (
+            all_tags.index(current_tag)
+        )
+
+    except ValueError:
+
+        current_index = -1
+
+    for i in range(
+        current_index + 1,
+        len(all_tags)
+    ):
+
+        tag = all_tags[i]
+
+        if tag not in completed_tags:
+            return tag
+
+    for i in range(
+        0,
+        current_index + 1
+    ):
+
+        tag = all_tags[i]
+
+        if tag not in completed_tags:
+            return tag
+
+    return None
+
 @app.route("/")
 def home():
 
@@ -167,33 +261,18 @@ def api_question(dataset_id, tag):
 
 @app.route("/api/check", methods=["POST"])
 def api_check():
-
     data = request.get_json()
-
-    selected_answer = data.get(
-        "selected_answer"
-    )
-
-    correct_answer = data.get(
-        "correct_answer"
-    )
-
-    definition = data.get(
-        "definition"
-    )
-
-    tag = data.get(
-        "tag"
-    )
+    selected_answer = data.get("selected_answer")
+    correct_answer = data.get("correct_answer")
+    definition = data.get("definition")
+    tag = data.get("tag")
     synonyms = data.get("synonyms")
-    dataset_id = data.get(
-        "dataset_id"
-    )
+    dataset_id = data.get("dataset_id")
 
     result = (
-        "✅ Correct!"
+        f"✅ Correct!   {correct_answer}"
         if selected_answer == correct_answer
-        else f"❌ {selected_answer}"
+        else f"❌ {selected_answer} - {correct_answer}"
     )
 
     full_history = session.get(
@@ -217,6 +296,44 @@ def api_check():
         tag
     )
 
+    if next_data is None:
+
+        mark_tag_completed(
+            dataset_id,
+            tag
+        )
+
+        next_tag = get_next_uncompleted_tag(
+            dataset_id,
+            tag
+        )
+
+        if next_tag is None:
+
+            return jsonify({
+                "completed": True,
+                "message":
+                    "🎉 All categories completed!"
+            })
+
+        next_data = get_question(
+            dataset_id,
+            next_tag
+        )
+
+        return jsonify({
+            "result": result,
+            "previous_word": correct_answer,
+            "definition": definition,
+            "category_completed": True,
+            "next": {
+                "question": next_data["question"],
+                "sentence": next_data["sentence"],
+                "options": next_data["options"],
+                "tag": next_tag
+            }
+        })
+
     return jsonify({
         "result": result,
         "previous_word": correct_answer,
@@ -228,7 +345,6 @@ def api_check():
             "tag": tag
         }
     })
-
 if __name__ == "__main__":
     app.run(
         host="0.0.0.0",

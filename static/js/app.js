@@ -259,6 +259,15 @@ function showFeedback(data) {
   });
 
   renderHistory();
+    document.getElementById(
+        "correctWord"
+    ).textContent = data.result;
+    document.getElementById(
+        "definition"
+    ).textContent = data.definition;
+    document.getElementById(
+        "synonyms"
+    ).textContent = data.synonyms || "";
 
   document.getElementById(
       "historyPanel"

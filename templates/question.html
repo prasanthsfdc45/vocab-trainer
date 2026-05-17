@@ -72,27 +72,37 @@
                 {% endif %}
 
                 <form method="POST" action="/check">
+                    <div class="quiz-split-layout">
+                        <div class="quiz-left">
+                            <div class="options-container">
 
-                    <div class="options-container">
-
-                        {% for option in options %}
-
-                        <label class="option-card">
-
-                            <input
-                                type="radio"
-                                name="selected_answer"
-                                value="{{ option }}"
-                                required
-                            >
-
-                            <span>{{ option }}</span>
-
-                        </label>
-
-                        {% endfor %}
-
+                                {% for option in options %}
+        
+                                <label class="option-card">
+        
+                                    <input
+                                        type="radio"
+                                        name="selected_answer"
+                                        value="{{ option }}"
+                                        required
+                                    >
+        
+                                    <span>{{ option }}</span>
+        
+                                </label>
+        
+                                {% endfor %}
+        
+                            </div>
+                        </div>
+                        <div class="quiz-right" id="answerDetailsPanel">
+                            <div id="resultStatus"></div>
+                            <div id="correctWord"></div>
+                            <div id="definitionText"></div>
+                        </div>
                     </div>
+
+                    
 
                     <input
                         type="hidden"

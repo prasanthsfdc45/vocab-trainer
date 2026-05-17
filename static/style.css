@@ -1,359 +1,201 @@
-  /* Base styles */
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f7fb;
-    margin: 0;
+*{
+    box-sizing:border-box;
 }
 
-/* Category bar */
-.category-bar {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-    margin: 20px 0;
+body{
+    font-family:Arial,sans-serif;
+    background-color:#f4f7fb;
+    margin:0;
 }
 
-.category-btn {
-    background: white;
-    padding: 12px 16px;
-    border-radius: 8px;
-    border: 1px solid #e5e7eb;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
-    color: #111827;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-    transition: background 0.2s, transform 0.2s;
-    text-align: center;
-}
-.category-btn:hover {
-    background: #f0faff;
-    transform: translateY(-2px);
+.container{
+    width:100%;
+    max-width:1400px;
+    margin:auto;
+    padding:20px;
 }
 
-/* Container */
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 0;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+.hero-section{
+    text-align:center;
+    margin-bottom:40px;
 }
 
-/* Hero */
-.hero-section {
-    text-align: center;
-    margin-bottom: 50px;
-}
-.hero-section h1 {font-size: 42px; margin-bottom: 10px;}
-.hero-section p   {font-size: 18px; color: #6b7280;}
-
-/* Quiz layout – question panel + history below it */
-.quiz-container {
-    max-width: 1300px;
-    margin: auto;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;   /* stack vertically */
-    gap: 20px;
+.hero-section h1{
+    font-size:42px;
+    margin-bottom:10px;
 }
 
-/* Question panel – stays at ~60 % of the screen */
-.quiz-panel {
-    background: white;
-    padding: 35px;
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    width: 100%;
+.hero-section p{
+    font-size:18px;
+    color:#6b7280;
 }
 
-/* History panel – appears below the question, ~40 % of the screen */
-.history-panel {
-    background: white;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    width: 100%;
-    overflow-y: auto;
-    min-height: 200px;
+.category-bar{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    justify-content:center;
+    margin:20px 0;
 }
 
-/* History list – grid layout similar to the question frame */
-.history-list {
-    display: grid;
-    gap: 15px;
-    margin-top: 10px;
-}
-.history-item {
-    background: #fff;
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    font-size: 15px;
+.category-bar a{
+    text-decoration:none;
 }
 
-/* Tag badge */
-.tag-badge {
-    display: inline-block;
-    background-color: #e0f2fe;
-    color: #0369a1;
-    padding: 8px 14px;
-    border-radius: 999px;
-    margin-bottom: 20px;
-    font-weight: bold;
+.category-btn{
+    background:white;
+    padding:12px 16px;
+    border-radius:8px;
+    border:1px solid #e5e7eb;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+    color:#111827;
+    box-shadow:0 2px 5px rgba(0,0,0,0.08);
+    transition:all 0.2s ease;
+    text-align:center;
 }
 
-/* Sentence */
-.sentence {
-    font-size: 34px;
-    line-height: 1.5;
-    margin-bottom: 35px;
+.category-btn:hover{
+    background:#f0faff;
+    transform:translateY(-2px);
 }
 
-/* Options */
-.options-container {display: grid; gap: 15px;}
-.option-card {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    background: #f9fafb;
-    padding: 18px;
-    border-radius: 14px;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: all 0.2s ease;
-    font-size: 18px;
-}
-.option-card:hover {
-    border-color: #3b82f6;
-    background-color: #eff6ff;
-}
-.option-card input {transform: scale(1.4);}
-
-/* Submit button */
-.submit-btn {
-    margin-top: 30px;
-    width: 100%;
-    background-color: #2563eb;
-    color: white;
-    border: none;
-    padding: 18px;
-    font-size: 18px;
-    border-radius: 14px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-.submit-btn:hover {background-color: #1d4ed8;}
-
-/* Result box (kept for compatibility – hidden when not needed) */
-.result-box {margin-top: 20px;}
-
-/* Responsive */
-@media (max-width: 900px) {
-    .quiz-container {flex-direction: column; padding
-
-⏺ /* Base styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f7fb;
-    margin: 0;
+.quiz-container{
+    width:100%;
 }
 
-/* Category bar */
-.category-bar {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-    margin: 20px 0;
-}
-.category-bar a {
-    text-decoration: none;
-}
-.category-btn a {
-    text-decoration: none;
-}
-.category-btn {
-    background: white;
-    padding: 12px 16px;
-    border-radius: 8px;
-    border: 1px solid #e5e7eb;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
-    color: #111827;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-    transition: background 0.2s, transform 0.2s;
-    text-align: center;
-}
-.category-btn:hover {
-    background: #f0faff;
-    transform: translateY(-2px);
+.quiz-panel{
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+    width:100%;
 }
 
-/* Container */
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 0;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+.tag-badge{
+    display:inline-block;
+    background-color:#e0f2fe;
+    color:#0369a1;
+    padding:8px 14px;
+    border-radius:999px;
+    margin-bottom:20px;
+    font-weight:bold;
 }
 
-/* Hero */
-.hero-section {
-    text-align: center;
-    margin-bottom: 50px;
-}
-.hero-section h1 {font-size: 42px; margin-bottom: 10px;}
-.hero-section p   {font-size: 18px; color: #6b7280;}
-
-/* Quiz layout – question panel + history below it */
-.quiz-container {
-    max-width: 1300px;
-    margin: auto;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;   /* stack vertically */
-    gap: 20px;
+.sentence{
+    font-size:34px;
+    line-height:1.5;
+    margin-bottom:35px;
 }
 
-/* Question panel – stays at ~60 % of the screen */
-.quiz-panel {
-    background: white;
-    padding: 35px;
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    width: 100%;
+.quiz-split-layout{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    gap:24px;
+    width:100%;
 }
 
-/* History panel – appears below the question, ~40 % of the screen */
-.history-panel {
-    background: white;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    width: 100%;
-    overflow-y: auto;
-    min-height: 200px;
+.quiz-left{
+    min-width:0;
 }
 
-/* History list – grid layout similar to the question frame */
-.history-list {
-    display: grid;
-    gap: 15px;
-    margin-top: 10px;
-}
-.history-item {
-    background: #fff;
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    font-size: 15px;
+.quiz-right{
+    min-width:0;
+    background:#f5f7fb;
+    border-radius:14px;
+    padding:20px;
+    min-height:320px;
+    overflow-wrap:anywhere;
 }
 
-/* Tag badge */
-.tag-badge {
-    display: inline-block;
-    background-color: #e0f2fe;
-    color: #0369a1;
-    padding: 8px 14px;
-    border-radius: 999px;
-    margin-bottom: 20px;
-    font-weight: bold;
+.options-container{
+    display:grid;
+    gap:15px;
+    width:100%;
 }
 
-/* Sentence */
-.sentence {
-    font-size: 34px;
-    line-height: 1.5;
-    margin-bottom: 35px;
+.option-card{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    background:#f9fafb;
+    padding:18px;
+    border-radius:14px;
+    cursor:pointer;
+    border:2px solid transparent;
+    transition:all 0.2s ease;
+    font-size:18px;
+    width:100%;
 }
 
-/* Options */
-.options-container {display: grid; gap: 15px;}
-.option-card {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    background: #f9fafb;
-    padding: 18px;
-    border-radius: 14px;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: all 0.2s ease;
-    font-size: 18
+.option-card:hover{
+    border-color:#3b82f6;
+    background-color:#eff6ff;
+}
 
-⏺     }
-    .option-card:hover {
-        border-color: #3b82f6;
-        background-color: #eff6ff;
+.option-card input{
+    transform:scale(1.4);
+}
+
+.submit-btn{
+    margin-top:30px;
+    width:100%;
+    background-color:#2563eb;
+    color:white;
+    border:none;
+    padding:18px;
+    font-size:18px;
+    border-radius:14px;
+    cursor:pointer;
+    transition:background-color 0.2s ease;
+}
+
+.submit-btn:hover{
+    background-color:#1d4ed8;
+}
+
+.history-panel{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+    width:100%;
+    margin-top:20px;
+}
+
+.history-list{
+    display:grid;
+    gap:15px;
+    margin-top:10px;
+}
+
+.history-item{
+    background:#fff;
+    padding:15px;
+    border-radius:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    font-size:15px;
+}
+
+.empty-history{
+    text-align:center;
+    color:#6c757d;
+    font-style:italic;
+    padding:20px;
+}
+
+@media (max-width:900px){
+
+    .quiz-split-layout{
+        grid-template-columns:1fr;
     }
-    .option-card input {transform: scale(1.4);}
 
-/* Submit button */
-.submit-btn {
-    margin-top: 30px;
-    width: 100%;
-    background-color: #2563eb;
-    color: white;
-    border: none;
-    padding: 18px;
-    font-size: 18px;
-    border-radius: 14px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-.submit-btn:hover {background-color: #1d4ed8;}
-
-/* Result box (kept for compatibility – hidden when not needed) */
-.result-box {margin-top: 20px;}
-
-/* Attempt History */
-.history-section {
-    margin-top: 25px;
-}
-.history-section h2 {
-    margin-bottom: 15px;
-    color: #2c3e50;
-}
-.history-list {
-    display: grid;
-    gap: 10px;
-}
-.history-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 16px;
-    border-radius: 10px;
-    font-size: 14px;
-    background-color: #f8f9fa;
-}
-.history-item.correct {
-    border-left: 4px solid #28a745;
-    background-color: #d4edda;
-}
-.history-item.wrong {
-    border-left: 4px solid #dc3545;
-    background-color: #f8d7da;
-}
-.empty-history {
-    text-align: center;
-    color: #6c757d;
-    font-style: italic;
-    padding: 20px;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-    .quiz-container {
-        flex-direction: column;
-        padding: 20px;
+    .sentence{
+        font-size:28px;
     }
-    .sentence {font-size: 28px;}
-    .container {padding: 20px;}
+
+    .container{
+        padding:15px;
+    }
 }
