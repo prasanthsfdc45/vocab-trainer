@@ -171,7 +171,6 @@ function renderQuiz(data) {
     // Store question metadata on the form
     const form            = document.getElementById("answerForm");
     form.dataset.definition = data.question.definition || "";
-    form.dataset.notes      = data.question.notes      || "";
     form.dataset.synonyms   = (data.question.synonyms  || []).join(", ");
     form.dataset.correct    = data.question.word;
     form.dataset.tag        = data.tag || currentTag;
@@ -209,6 +208,7 @@ async function submitAnswer(event) {
         definition:      form.dataset.definition,
         notes:           form.dataset.notes,
         synonyms:        form.dataset.synonyms,
+        question:    document.getElementById("sentence").textContent,
         attempted:       [...attemptedWords],   // full list including just-answered word
     };
 
@@ -262,6 +262,7 @@ function showFeedback(data) {
 
     document.getElementById("correctWord").textContent = data.result       || "";
     document.getElementById("definition").textContent  = data.definition   || "";
+    document.getElementById("prevQuestion").textContent  = data.previous_question  || "";
     document.getElementById("synonyms").textContent    = data.synonyms     || "";
     document.getElementById("historyPanel").style.display = "block";
 }

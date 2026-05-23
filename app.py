@@ -141,7 +141,7 @@ def api_check():
     Body: {
         dataset_id, tag,
         selected_answer, correct_answer,
-        definition, notes, synonyms,
+        definition, notes, synonyms,question,
         attempted: ["word1", ...]     <- already includes correct_answer
     }
     Server picks the next question using the updated attempted list sent by client.
@@ -150,6 +150,7 @@ def api_check():
     selected_answer = body.get("selected_answer", "")
     correct_answer  = body.get("correct_answer", "")
     definition      = body.get("definition", "")
+    question           = body.get("question", "gfgf")
     notes           = body.get("notes", "")
     tag             = body.get("tag", "")
     synonyms        = (body.get("synonyms") or "").upper()
@@ -170,6 +171,7 @@ def api_check():
     feedback = {
         "result":        result,
         "previous_word": correct_answer,
+        "previous_question": question,
         "definition":    definition,
         "notes":         notes,
         "synonyms":      synonyms,
